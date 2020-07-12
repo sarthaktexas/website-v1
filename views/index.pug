@@ -12,4 +12,19 @@ html
     script(src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js' integrity='sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo' crossorigin='anonymous')
     script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js' integrity='sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI' crossorigin='anonymous')
   body
-    block content
+    .w3-card-4
+      .topnav( role="navigation" )
+        h1.topnav.name Sarthak Mohanty
+        a(href="/") Home
+        a(href="/resources") Resources
+        a(href="https://sarthakmohanty.me/contact" target="_blank") Contact Me
+      include header
+      include about
+      include projects
+      include contact
+      include footer
+      +header
+      +about
+      +projects
+      +contact
+      +footer
