@@ -461,7 +461,12 @@ and (orientation: landscape) {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
 }
 
-.badge-info {
+.badge-info .badge-scolor {
+    color: #000000;
+    background-color: #FF5757;
+}
+
+.badge-info .badge-scolor {
     color: #000000;
     background-color: #FF5757;
 }
