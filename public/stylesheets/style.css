@@ -45,7 +45,7 @@ h1 {
   display: inline-block;
 }
 
-.highlight {
+.scolor {
   color: #FF5757;
 }
 
@@ -90,8 +90,8 @@ a:visited {
 
 a:hover {
   color: rgba(234, 87, 108, 0.9);
-  background-image: -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
-  background-image: -moz-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+  background: -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+  background: -moz-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
   background: gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
   -webkit-background-size: 125px 100%;
   -moz-background-size: 125px 100%;
@@ -330,5 +330,44 @@ a:hover {
     }
     .morph {
       float: left;
+    }
+}
+
+/* Landscape */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
+  div {
+      max-width: 60rem;
+    }
+    .skill {
+      font-size: 20px;
+      margin: 4px 4px;
+    }
+    .morph {
+      float: left;
+      width: 100px;
+      height: 100px;
+    }
+}
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1112px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+      div {
+      max-width: 60rem;
+    }
+    .skill {
+      font-size: 20px;
+      margin: 4px 4px;
+    }
+    .morph {
+      float: left;
+      width: 100px;
+      height: 100px;
     }
 }

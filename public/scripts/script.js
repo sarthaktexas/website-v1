@@ -1,9 +1,8 @@
 console.log(`%c ________________________________________
-< mooooooooooooooooooooooooooooooooooooo >
+< HEY! If you see this, please hire me! >
  ----------------------------------------
         \\   ^__^
          \\  (oo)\\_______
             (__)\\       )\\/\\
                 ||----w |
                 ||     ||`, "font-family:monospace");
-console.danger("HEY! If you see this, please hire me!");
