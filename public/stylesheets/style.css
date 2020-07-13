@@ -66,12 +66,12 @@ a {
   padding: 0;
 }
 
-a:hover {
+/* a:hover {
   filter: brightness(80%);
   margin: 0;
   padding: 0;
 }
-
+ */
 a:visited {
   color: #FF5757;
 }
@@ -85,11 +85,63 @@ a:visited {
   border-bottom: 2px solid #FF5757;
   display: inline-block;
   line-height: 0.85;
-  text-shadow:
-    2px 2px white,
-    2px -2px white,
-    -2px 2px white,
-    -2px -2px white;
+}
+
+a:hover {
+  text-align: center;
+  color: rgba(255, 87, 87, 0.9);
+  background: -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+  background: -moz-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+  background: gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+  -webkit-background-size: 125px 100%;
+  -moz-background-size: 125px 100%;
+  background-size: 125px 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-animation-name: shimmer;
+  -moz-animation-name: shimmer;
+  animation-name: shimmer;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  animation-duration: 1s;
+/*   -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  animation-iteration-count: infinite; */
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+@-moz-keyframes shimmer {
+  0% {
+    background-position: top left;
+  }
+  100% {
+    background-position: top right;
+  }
+}
+@-webkit-keyframes shimmer {
+  0% {
+    background-position: top left;
+  }
+  100% {
+    background-position: top right;
+  }
+}
+@-o-keyframes shimmer {
+  0% {
+    background-position: top left;
+  }
+  100% {
+    background-position: top right;
+  }
+}
+@keyframes shimmer {
+  0% {
+    background-position: top left;
+  }
+  100% {
+    background-position: top right;
+  }
 }
 
 @keyframes strike{
