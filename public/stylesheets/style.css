@@ -3,16 +3,9 @@
   color: white;
 }
 
-.container {
-  border-radius: 25%;
-  max-width: 40rem;
-  margin: 2rem 2rem 2rem 4rem;
-  display: inline-block;
-}
-
 div {
   border-radius: 25%;
-  max-width: 60%;
+  max-width: 40rem;
   margin: 2rem 2rem 2rem 4rem;
   display: inline-block;
 }
