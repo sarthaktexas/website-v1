@@ -15,12 +15,14 @@ html
   body
     .container.w3-card-4
       include header
+      include body
       include about
       include projects
       include contact
       include footer
-      +header
+      +body
+      //+header
       //+about
-      +projects
+      //+projects
       //+contact
       //+footer
