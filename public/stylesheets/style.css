@@ -397,24 +397,11 @@ and (orientation: landscape) {
 }
 
 .rainbow {
-/*   background: white;
-  background: -webkit-linear-gradient(left, red, orange , yellow, green, cyan, blue, violet);
-  background: -o-linear-gradient(right, red, orange, yellow, green, cyan, blue, violet);
-  background: -moz-linear-gradient(right, red, orange, yellow, green, cyan, blue, violet);
-  background: linear-gradient(to right, red, orange , yellow, green, cyan, blue, violet);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
-   /* Chrome, Safari, Opera */
-  -webkit-animation: rainbow 5s infinite; 
-  
-  /* Internet Explorer */
+  -webkit-animation: rainbow 5s infinite;
   -ms-animation: rainbow 5s infinite;
-  
-  /* Standar Syntax */
   animation: rainbow 5s infinite; 
 }
 
-/* Chrome, Safari, Opera */
 @-webkit-keyframes rainbow{
   0%{color: orange;}	
   10%{color: purple;}	
@@ -429,7 +416,6 @@ and (orientation: landscape) {
 	100%{color: orange;}
 }
 
-/* Internet Explorer */
 @-ms-keyframes rainbow{
    0%{color: orange;}	
   10%{color: purple;}	
@@ -444,7 +430,6 @@ and (orientation: landscape) {
 	100%{color: orange;}
 }
 
-/* Standar Syntax */
 @keyframes rainbow{
     0%{color: orange;}	
   10%{color: purple;}	
@@ -457,5 +442,4 @@ and (orientation: landscape) {
   80%{color: DeepPink;}
   90%{color: DodgerBlue;}
 	100%{color: orange;}
-}
 }
