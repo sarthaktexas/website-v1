@@ -95,10 +95,6 @@ a:visited {
   padding: 10px;
 }
 
-.coffee a:hover {
-  color: brown;
-}
-
 a:hover {
   text-align: center;
   color: rgba(234, 87, 108, 0.9);
