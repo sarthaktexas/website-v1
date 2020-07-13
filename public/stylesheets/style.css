@@ -1,30 +1,79 @@
-* {
-  font-family: "Inter", sans-serif;
+div {
+  border-radius: 25%;
+  max-width: 40rem;
+  margin: 2rem 2rem 2rem 4rem;
+  display:inline-block;
 }
 
-.w3-container a {
-  color: #337ab7;
-  text-decoration: none;
+body {
+  font-family: 'Inter', sans-serif;
 }
 
-.w3-container {
-  font-family: "Inter", sans-serif;
-}
-
-pre {
+h1 {
   text-align: left;
-  font-family: "Courier New", Courier, monospace;
-  background-color: #343f5f;
-  color: #fdfeff;
-  overflow: scroll;
-  border: 1px #929090 solid;
-  padding: 15px;
+  font-size: 35px;
+  margin: 1rem 0 1rem 0;
+  display:inline-block;
 }
 
-.w3-card-4 {
-  padding: 15px;
+.highlight {
+  background-image: linear-gradient(-100deg, rgba(250, 247, 133, 0.33), rgba(250, 247, 133, 0.66) 95%, rgba(250, 247, 133, 0.1));
+    border-radius: 1em 0px;
+
 }
 
-.sociallink {
-  padding: 5px;
+
+
+h2 {
+  font-size: 30px;
+  margin: 1rem 0 .5rem 0;
+  display:inline-block;
+  text-emphasis: bold;
+}
+
+h3 {
+  font-size: 25px;
+  margin: 0 0 .5rem 0;
+  text-decoration:none;
+  display:inline-block;
+}
+
+
+h4 {
+  font-size: 20px;
+  margin: 0 0 .5rem 4rem;
+  text-decoration:none;
+  display:inline-block;
+}
+
+
+.icons h4 {
+  color: black;
+  font-size: 20px;
+  margin: 0 0 2rem 0;
+  text-decoration:none;
+  display:inline-block;
+}
+
+a{
+  text-decoration:none;
+  margin: 0;
+  padding: 0;
+}
+
+a:hover {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  
+}
+
+a:visited {
+  color: black;
+}
+
+.icons img{
+  height: 50px;
+  width: auto;
+
 }
