@@ -10,7 +10,8 @@
     "express": "^4.17.1",
     "express-router": "^0.0.1",
     "path": "^0.12.7",
-    "pug": "^3.0.0"
+    "pug": "^3.0.0",
+    "cowsay": "^1.4.0"
   },
   "engines": {
     "node": "12.x"
