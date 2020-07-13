@@ -1,3 +1,7 @@
+* {
+  font-family: 'Inter', sans-serif;
+}
+
 div {
   border-radius: 25%;
   max-width: 40rem;
@@ -89,4 +93,17 @@ a:visited {
     2px -2px white,
     -2px 2px white,
     -2px -2px white;
+}
+
+.skill {
+  background-color: #ddd;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
 }
