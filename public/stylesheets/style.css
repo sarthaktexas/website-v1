@@ -1,5 +1,6 @@
 * {
   font-family: 'Inter', sans-serif;
+  color: white;
 }
 
 div {
@@ -11,6 +12,8 @@ div {
 
 body {
   font-family: 'Inter', sans-serif;
+  background-image: url("https://cdn.glitch.com/52a09d93-774c-49a5-8883-9ac50e4c6dbf%2Fng-background-dot.png?v=1594606637112");
+  background-color: #140D1A;
 }
 
 h1 {
@@ -21,8 +24,7 @@ h1 {
 }
 
 .highlight {
-  background-image: linear-gradient(-100deg, rgba(250, 247, 133, 0.33), rgba(250, 247, 133, 0.66) 95%, rgba(250, 247, 133, 0.1));
-    border-radius: 1em 0px;
+color: #FF5757;
 
 }
 
@@ -62,21 +64,21 @@ h4 {
 }
 
 a {
-  color: black;
+  color: #FF5757;
   text-decoration:none;
   margin: 0;
   padding: 0;
 }
 
 a:hover {
-  filter: brightness(90%);
+  filter: brightness(80%);
   margin: 0;
   padding: 0;
   
 }
 
 a:visited {
-  color: black;
+  color: #FF5757;
 }
 
 .icons i {
@@ -88,11 +90,6 @@ a:visited {
   border-bottom: 2px solid currentColor;
   display: inline-block;
   line-height: 0.85;
-  text-shadow:
-    2px 2px white,
-    2px -2px white,
-    -2px 2px white,
-    -2px -2px white;
 }
 
 .skill {
