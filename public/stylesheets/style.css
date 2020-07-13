@@ -45,7 +45,7 @@ h1 {
   display: inline-block;
 }
 
-.highlight {
+.scolor {
   color: #FF5757;
 }
 
@@ -93,6 +93,10 @@ a:visited {
 .icons i {
   font-size: 30px;
   padding: 10px;
+}
+
+.coffee a:hover {
+  color: brown;
 }
 
 a:hover {
