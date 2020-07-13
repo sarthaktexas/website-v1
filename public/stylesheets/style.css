@@ -1,7 +1,7 @@
 * {
   font-family: "Inter", sans-serif;
   color: white;
-  cursor: crosshair;
+  cursor: default;
 }
 
 *::selection {
@@ -105,9 +105,9 @@ a:hover {
   -webkit-animation-duration: 1s;
   -moz-animation-duration: 1s;
   animation-duration: 1s;
-  -webkit-animation-iteration-count: infinite;
+  /* -webkit-animation-iteration-count: infinite;
   -moz-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
+  animation-iteration-count: infinite; */
   background-repeat: no-repeat;
   background-position: 0 0;
 }
@@ -160,8 +160,7 @@ a:hover {
   height: 2px;
   background: #FF5757;
   animation-name: strike;
-  animation-delay: 1s;
-  animation-duration: 1s;
+  animation-duration: 2s;
   animation-timing-function: linear;
   animation-iteration-count: 1;
   animation-fill-mode: forwards; 
@@ -315,9 +314,8 @@ a:hover {
   }
 }
 
-/* Portrait */
-@media only screen 
-  and (min-device-width: 320px) 
+/* iPhone Portrait */
+@media only screen
   and (max-device-width: 480px)
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: portrait) {
@@ -333,9 +331,8 @@ a:hover {
     }
 }
 
-/* Landscape */
+/* iPhone Landscape */
 @media only screen
-and (min-device-width : 320px)
 and (max-device-width : 480px)
 and (-webkit-min-device-pixel-ratio: 2)
 and (orientation: landscape) {
@@ -353,7 +350,7 @@ and (orientation: landscape) {
     }
 }
 
-/* Portrait and Landscape */
+/* iPad Portrait and Landscape */
 @media only screen 
   and (min-device-width: 768px) 
   and (max-device-width: 1112px)
