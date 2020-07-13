@@ -77,14 +77,14 @@ a:visited {
 }
 
 .icons i {
-  font-size: 20px;
+  font-size: 30px;
   padding: 10px;
 }
 
 .underline {
-  border-bottom: 2px solid currentColor;
+  border-bottom: 2px solid #FF5757;
   display: inline-block;
-  line-height: 0.85;
+  line-height: inherit;
 }
 
 .skill {
@@ -103,7 +103,7 @@ a:visited {
 }
 
 .morph {
-  padding: 40px;
+  padding: 80px;
   float: right;
   display: flex;
   align-content: center;
@@ -211,25 +211,16 @@ a:visited {
   }
 }
 
-/* Create two equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 50%;
-  padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
+/* Portrait */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+    div {
+      max-width: 60rem;
+    }
+    .morph {
+      float: left;
+    }
 }
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-  }
-}
-</style>
