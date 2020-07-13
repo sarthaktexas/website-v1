@@ -1,5 +1,5 @@
 * {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   color: white;
 }
 
@@ -7,7 +7,7 @@
   border-radius: 25%;
   max-width: 40rem;
   margin: 2rem 2rem 2rem 4rem;
-  display:inline-block;
+  display: inline-block;
 }
 
 div {
@@ -18,7 +18,7 @@ div {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   background-image: url("https://cdn.glitch.com/52a09d93-774c-49a5-8883-9ac50e4c6dbf%2Fng-background-dot.png?v=1594606637112");
   background-color: #140D1A;
 }
@@ -27,52 +27,47 @@ h1 {
   text-align: left;
   font-size: 35px;
   margin: 1rem 0 1rem 0;
-  display:inline-block;
+  display: inline-block;
 }
 
 .highlight {
-color: #FF5757;
-
+  color: #FF5757;
 }
-
-
 
 h2 {
   font-size: 30px;
-  margin: 1rem 0 .5rem 0;
-  display:inline-block;
+  margin: 1rem 0 0.5rem 0;
+  display: inline-block;
   text-emphasis: bold;
 }
 
 h3 {
   font-weight: 400;
   font-size: 25px;
-  margin: 0 0 .5rem 0;
-  text-decoration:none;
-  display:inline-block;
+  margin: 0 0 0.5rem 0;
+  text-decoration: none;
+  display: inline-block;
 }
-
 
 h4 {
   font-weight: 300;
   font-size: 20px;
-  margin: 0 0 .5rem 4rem;
-  text-decoration:none;
-  display:inline-block;
+  margin: 0 0 0.5rem 4rem;
+  text-decoration: none;
+  display: inline-block;
 }
-
 
 .icons h4 {
   color: black;
   font-size: 20px;
   margin: 0 0 2rem 0;
-  text-decoration:none;
-  display:inline-block;
+  text-decoration: none;
+  display: inline-block;
 }
 
 a {
   color: #FF5757;
-  text-decoration:none;
+  text-decoration: none;
   margin: 0;
   padding: 0;
 }
@@ -81,7 +76,6 @@ a:hover {
   filter: brightness(80%);
   margin: 0;
   padding: 0;
-  
 }
 
 a:visited {
