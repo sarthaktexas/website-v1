@@ -75,8 +75,18 @@ a:visited {
   color: black;
 }
 
-.icons img{
-  height: 50px;
-  width: auto;
+.icons i {
+  font-size: 20px;
+  padding: 10px;
+}
 
+.underline {
+  border-bottom: 2px solid currentColor;
+  display: inline-block;
+  line-height: 0.85;
+  text-shadow:
+    2px 2px white,
+    2px -2px white,
+    -2px 2px white,
+    -2px -2px white;
 }
