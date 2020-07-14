@@ -1,6 +1,7 @@
 dependencies:
   express: 4.17.1
   express-router: 0.0.1
+  fs: 0.0.2
   path: 0.12.7
   pug: 3.0.0
 packages:
@@ -226,6 +227,10 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha1-PYyt2Q2XZWn6g1qx+OSyOhBWBac=
+  /fs/0.0.2:
+    dev: false
+    resolution:
+      integrity: sha1-4fJE7zkzwbKmS9R5kTYGDQ9ZFPg=
   /has-symbols/1.0.1:
     dev: false
     engines:
@@ -660,5 +665,6 @@ shrinkwrapVersion: 3
 specifiers:
   express: ^4.17.1
   express-router: ^0.0.1
+  fs: ^0.0.2
   path: ^0.12.7
   pug: ^3.0.0
