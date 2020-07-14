@@ -1,12 +1,28 @@
 doctype html
 html
   head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width,initial-scale=1')
+    //if IE
+      link(rel='icon', href='favicon.ico')
     title= title
     link(rel='shortcut icon', href='https://sarthakmohanty.me/android-chrome-512x512.png')
     link(rel='stylesheet', href='/stylesheets/style.css')
     script(src='/scripts/script.js')
     script(src="https://kit.fontawesome.com/3573f6a0f9.js" crossorigin="anonymous")
     link(href='https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap' rel='stylesheet')
+    link(rel='icon', type='image/png', sizes='32x32', href='favicon-32x32.png')
+    link(rel='icon', type='image/png', sizes='16x16', href='favicon-16x16.png')
+    link(rel='manifest', href='manifest.json')
+    meta(name='theme-color', content='#140D1A')
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    meta(name='apple-mobile-web-app-status-bar-style', content='#140D1A')
+    meta(name='apple-mobile-web-app-title', content='Sarthak Mohanty')
+    link(rel='apple-touch-icon', href='apple-touch-icon-152x152.png')
+    link(rel='mask-icon', href='favicon.ico', color='#140D1A')
+    meta(name='msapplication-TileImage', content='msapplication-icon-144x144.png')
+    meta(name='msapplication-TileColor', content='#140D1A')
   body
     .morph
       img(class="profilepic" src="https://cdn.glitch.com/52a09d93-774c-49a5-8883-9ac50e4c6dbf%2F28282096.jpeg?v=1594631763358" width="400px")
@@ -181,8 +197,6 @@ html
       button.skill 🦕 Node.js
       button.skill 🚅 Express.js
       button.skill 🐻 Discord.js
-      button.skill 🐻 Discord.js
-      
       button.skill 👷 Slack API
       button.skill 🤖 Heroku
       button.skill 🖥️ Amazon Web Services
@@ -191,6 +205,7 @@ html
       button.skill 📈 Grafana
       button.skill 🛡️ Sentry
       button.skill 💡 Vercel
+      button.skill 💳 Stripe
       button.skill ✉️ Postman
       button.skill 🔄 Git VCS
       button.skill 🐱 Github
