@@ -350,11 +350,12 @@ a:hover {
       max-width: 60rem;
     }
     .skill {
-      font-size: 20px;
+      font-size: 15px;
       margin: 4px 4px;
     }
     .morph {
       float: left;
+      padding: 60px;
     }
 }
 
