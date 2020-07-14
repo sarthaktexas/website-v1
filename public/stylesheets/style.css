@@ -193,7 +193,7 @@ a:hover {
 .skill {
   background-color: #FF5757;
   border: none;
-  color: black;
+  color: #140D1A;
   padding: 10px 20px;
   font-weight: 500;
   text-align: center;
@@ -235,7 +235,7 @@ a:hover {
   -moz-box-shadow: 0 0 5px #FF5757;
   -webkit-box-shadow: 0 0 5px #FF5757;
   box-shadow: 0px 0px 5px #FF5757;
-  filter:progid:DXImageTransform.Microsoft.Glow(Color=#FF5757,Strength=5);
+  filter:progid:DXImageTransform.Microsoft.Glow(Color="#FF5757",Strength=5);
   animation: morphing 10s infinite;
   overflow: hidden;
 }
@@ -258,7 +258,7 @@ a:hover {
     -moz-box-shadow: 0 0 5px #FF5757;
     -webkit-box-shadow: 0 0 5px #FF5757;
     box-shadow: 0px 0px 5px #FF5757;
-    filter:progid:DXImageTransform.Microsoft.Glow(Color=#FF5757,Strength=5);
+    filter:progid:DXImageTransform.Microsoft.Glow(Color="#FF5757",Strength=5);
   }
   25% {
     border-radius: 58% 42% 75% 25%/76% 46% 54% 24%;
@@ -268,7 +268,7 @@ a:hover {
     -moz-box-shadow: 0 0 5px #FF5757;
     -webkit-box-shadow: 0 0 5px #FF5757;
     box-shadow: 0px 0px 5px #FF5757;
-    filter:progid:DXImageTransform.Microsoft.Glow(Color=#FF5757,Strength=5);
+    filter:progid:DXImageTransform.Microsoft.Glow(Color="#FF5757",Strength=5);
   }
   75% {
     border-radius: 33% 67% 58% 42%/63% 68% 32% 37%;
@@ -280,7 +280,7 @@ a:hover {
     -moz-box-shadow: 0 0 5px #FF5757;
     -webkit-box-shadow: 0 0 5px #FF5757;
     box-shadow: 0px 0px 5px #FF5757;
-    filter:progid:DXImageTransform.Microsoft.Glow(Color=#FF5757,Strength=5);
+    filter:progid:DXImageTransform.Microsoft.Glow(Color="#FF5757",Strength=5);
   }
   25% {
     border-radius: 58% 42% 75% 25%/76% 46% 54% 24%;
@@ -290,7 +290,7 @@ a:hover {
     -moz-box-shadow: 0 0 5px #FF5757;
     -webkit-box-shadow: 0 0 5px #FF5757;
     box-shadow: 0px 0px 5px #FF5757;
-    filter:progid:DXImageTransform.Microsoft.Glow(Color=#FF5757,Strength=5);
+    filter:progid:DXImageTransform.Microsoft.Glow(Color="#FF5757",Strength=5);
   }
   75% {
     border-radius: 33% 67% 58% 42%/63% 68% 32% 37%;
@@ -302,7 +302,7 @@ a:hover {
     -moz-box-shadow: 0 0 5px #FF5757;
     -webkit-box-shadow: 0 0 5px #FF5757;
     box-shadow: 0px 0px 5px #FF5757;
-    filter:progid:DXImageTransform.Microsoft.Glow(Color=#FF5757,Strength=5);
+    filter:progid:DXImageTransform.Microsoft.Glow(Color="#FF5757",Strength=5);
   }
   25% {
     border-radius: 58% 42% 75% 25%/76% 46% 54% 24%;
@@ -324,7 +324,7 @@ a:hover {
     -moz-box-shadow: 0 0 5px #FF5757;
     -webkit-box-shadow: 0 0 5px #FF5757;
     box-shadow: 0px 0px 5px #FF5757;
-    filter:progid:DXImageTransform.Microsoft.Glow(Color=#FF5757,Strength=5);
+    filter:progid:DXImageTransform.Microsoft.Glow(Color="#FF5757",Strength=5);
   }
   25% {
     border-radius: 58% 42% 75% 25%/76% 46% 54% 24%;
@@ -334,7 +334,7 @@ a:hover {
     -moz-box-shadow: 0 0 5px #FF5757;
     -webkit-box-shadow: 0 0 5px #FF5757;
     box-shadow: 0px 0px 5px #FF5757;
-    filter:progid:DXImageTransform.Microsoft.Glow(Color=#FF5757,Strength=5);
+    filter:progid:DXImageTransform.Microsoft.Glow(Color="#FF5757",Strength=5);
   }
   75% {
     border-radius: 33% 67% 58% 42%/63% 68% 32% 37%;
