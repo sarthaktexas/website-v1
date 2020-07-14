@@ -356,7 +356,7 @@ a:hover {
     .morph {
       float: left;
       padding: 0px;
-      margin-bottom: 5px;
+      margin-bottom: -5px;
       width: 300px;
       height: 300px;
     }
@@ -371,13 +371,15 @@ and (orientation: landscape) {
       max-width: 60rem;
     }
     .skill {
-      font-size: 20px;
+      font-size: 15px;
       margin: 4px 4px;
     }
     .morph {
       float: left;
-      width: 100px;
-      height: 100px;
+      padding: 0px;
+      margin-bottom: -5px;
+      width: 300px;
+      height: 300px;
     }
 }
 
@@ -395,8 +397,10 @@ and (orientation: landscape) {
     }
     .morph {
       float: left;
-      width: 100px;
-      height: 100px;
+      padding: 0px;
+      margin-bottom: -5px;
+      width: 300px;
+      height: 300px;
     }
 }
 
