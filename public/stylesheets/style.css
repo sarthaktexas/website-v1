@@ -355,7 +355,10 @@ a:hover {
     }
     .morph {
       float: left;
-      padding: 60px;
+      padding: 0px;
+      margin-bottom: 5px;
+      width: 300px;
+      height: 300px;
     }
 }
 
