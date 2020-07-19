@@ -1,9 +1,21 @@
 doctype html
-html
+html(lang='en')
   head
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width,initial-scale=1')
+    meta(name="twitter:card" content="summary")
+    meta(name='description' content='I\'m Sarthak Mohanty, a rising high school junior and a full-stack developer and designer.')
+    meta(name='keywords' content='Sarthak, Mohanty, san, antonio, design, designer, developer, programmer, html, css, js, node, express')
+    meta(name='author' content='Sarthak Mohanty')
+    meta(name='twitter:card' content='summary')
+    meta(name='twitter:site' content='@sarthaktexas')
+    meta(name='twitter:creator' content='@sarthaktexas')
+    meta(property='og:url' content='https://srtk.me')
+    meta(property='og:title' content='Sarthak Mohanty')
+    meta(property='og:description' content='I\'m Sarthak Mohanty, a rising high school junior and a full-stack developer and designer.')
+    meta(property='og:image' content='https://cdn.glitch.com/52a09d93-774c-49a5-8883-9ac50e4c6dbf%2FSarthak%20Mohanty%2C%20Inc%20(1).png?v=1594723928537')
+
     //if IE
       link(rel='icon', href='favicon.ico')
     title= title
@@ -11,7 +23,7 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
     script(src='/scripts/script.js')
     script(src="https://kit.fontawesome.com/3573f6a0f9.js" crossorigin="anonymous")
-    link(href='https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap' rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap' rel='stylesheet')
     link(rel='icon', type='image/png', sizes='32x32', href='favicon-32x32.png')
     link(rel='icon', type='image/png', sizes='16x16', href='favicon-16x16.png')
     link(rel='manifest', href='manifest.json')
@@ -25,17 +37,15 @@ html
     meta(name='msapplication-TileColor', content='#140D1A')
   body
     .morph
-      img(class="profilepic" src="https://cdn.glitch.com/52a09d93-774c-49a5-8883-9ac50e4c6dbf%2F28282096.jpeg?v=1594631763358" width="400px")
+      img(class="profilepic" src="https://cdn.glitch.com/52a09d93-774c-49a5-8883-9ac50e4c6dbf%2FE165F956-94C6-4454-AECB-49872A60CE47.png?v=1594727147930" width="400px" alt="profile picture")
     div
-      h1 Howdy! 🤠 I'm #[a(href="mailto:me@sarthakmohanty.me") Sarthak Mohanty].
+      h1 Howdy! 🤠 I'm #[a(href="mailto:hello@sarthakmohanty.me") Sarthak Mohanty].
       br
       h3 I'm 15 and I love developing random things and making them look #[em good].
       br
-      h3 I #[span.underline mostly break things] though. 💥
-      br
       h3 Technically, I'm a #[span.scolor Full Stack Web Developer 💻] and #[span.scolor Designer ✏️]. And I got some skills too:
       br
-      button.skill  Management
+      button.skill Management
       button.skill Research
       button.skill Leadership
       button.skill Active Communication
@@ -54,6 +64,10 @@ html
       button.skill Web Design
       br
       p *not in any particular order
+      button.pill
+        a(target="_blank" rel="noreferrer noopener" href="https://sarthakmohanty.s3.amazonaws.com/Sarthak's+Resume.pdf") Résumé
+      button.pill
+        a(target="_blank" rel="noreferrer noopener" href="mailto:hello@sarthakmohanty.me") Hire Me!
       br
       br
       br
@@ -61,28 +75,28 @@ html
       br
       h3
         | Attending 
-        a.scolor(target='_blank' href='http://nisd.net/brandeis') Louis D. Brandeis High School
+        a.scolor(target='_blank' rel="noreferrer noopener" href='http://nisd.net/brandeis') Louis D. Brandeis High School
       h4
         | I&apos;m a #[span.underline junior] trying my hardest to not try. I&apos;m also a stressed student taking mostly AP classes. As a student on the STEM track, I focus my efforts on AP Maths and Sciences.
       h3
         | Coleading the 
-        a.scolor(target='_blank' href='https://bit.ly/brandeisbowlz') Bowl Clubs
+        a.scolor(target='_blank' rel="noreferrer noopener" href='https://bit.ly/brandeisbowlz') Bowl Clubs
       h4
-        | The Bowl Clubs collectively include #[em Science Bowl, Ocean Bowl, and Quiz Bowl]. Starting my second year of high school (11th grade), I was responsible for teaching incoming freshman and updating them of team practices and college-level science and math information. I curated presentations and custom textbooks to help them understand complex topics such as Calculus at an easy-to-learn level and help them understand AP Science subjects from a Pre-AP Science level. This took approximately 20 hours a week but drastically helped out team.
+        | The Bowl Clubs collectively include #[em #[a(target='_blank' rel="noreferrer noopener" href='https://science.osti.gov/wdts/nsb') Science Bowl], #[a(target='_blank' rel="noreferrer noopener" href='http://nosb.org/') Ocean Bowl], and #[a(target='_blank' rel="noreferrer noopener" href='https://www.naqt.com/hs/') Quiz Bowl]]. Starting my second year of high school (11th grade), I was responsible for teaching incoming freshman and updating them of team practices and college-level science and math information. I curated presentations and custom textbooks to help them understand complex topics such as Calculus at an easy-to-learn level and help them understand AP Science subjects from a Pre-AP Science level. This took approximately 20 hours a week but drastically helped out team.
       h3
         | Attending 
-        a.scolor(target='_blank' href='https://www.alamo.edu/nvc/') Northwest Vista College
+        a.scolor(target='_blank' rel="noreferrer noopener" href='https://www.alamo.edu/nvc/') Northwest Vista College
       h4
-        | As a Dual Credit Student, I'm taking many courses doubly to earn both AP credit and state credit.
+        | As a Dual Credit Student, I'm taking many courses doubly to earn both AP credit and state credit for college.
       h3
         | Volunteering at 
-        a.scolor(target='_blank' href='https://www.youthcodejam.org/') Youth Code Jam 
+        a.scolor(target='_blank' rel="noreferrer noopener" href='https://www.youthcodejam.org/') Youth Code Jam 
         | as a Student Volunteer
       h4
         | I lead stations, workshops, and activities throughout the year during code jams around the greater San Antonio area. I have experience teaching STEM to K-12 and Higher Education.
       h3
         | A part of 
-        a.scolor(target='_blank' href='https://hackclub.org/') Hack Club
+        a.scolor(target='_blank' rel="noreferrer noopener" href='https://hackclub.org/') Hack Club
       h4
         | Just an active member in the community helping people when they need it. #[span.scolor Soon to be Executive Director of Brandeis Hack Club.]
       h3
@@ -93,28 +107,28 @@ html
       br
       h3
         | Worked at 
-        a.scolor(target='_blank' href='https://fiveable.me/') Fiveable
+        a.scolor(target='_blank' rel="noreferrer noopener" href='https://fiveable.me/') Fiveable
         |  as a Social Media Manager and Research Intern
       h4.scolor May 2019 - August 2019 • 4 mos
       h4
         | I mainly did #[span.underline graphic design] and made marketing campaigns to promote to students. I also managed the 
-        a.scolor(target='_blank' href='https://instagram.com/thinkfiveable') main Instagram 
+        a.scolor(target='_blank' rel="noreferrer noopener" href='https://instagram.com/thinkfiveable') main Instagram 
         | and the other 
-        a.scolor(target='_blank' href='https://instagram.com/teachfiveable') Instagram 
+        a.scolor(target='_blank' rel="noreferrer noopener" href='https://instagram.com/teachfiveable') Instagram 
         | and made posts to target students and teachers.
       h2 Projects I've worked on
       br
       h3 
-        a(target="_blank" href="") My Website 
-        span.badge.badge-info HTML 
-        span.badge.badge-info CSS 
-        span.badge.badge-info JS 
+        a(target="_blank" rel="noreferrer noopener" href="") My Website 
+        span.badge.badge-info HTML
+        span.badge.badge-info CSS
+        span.badge.badge-info JS
         span.badge.badge-info Node.js
         span.badge.badge-info Express.js
       h4
         | What you're looking at right now. Made using Node.js and Express.js with a backend for some secret-stuff. Also, I've had #[em many] versions of this website, but sadly only kept 1 on my file drive.
       h3
-        a(target="_blank" href="https://nerdstagram.com/sarthakmohantyinc/Opes") Resource Bank 
+        a(target="_blank" rel="noreferrer noopener" href="https://nerdstagram.com/sarthakmohantyinc/Opes") Resource Bank 
         span.badge.badge-info HTML 
         span.badge.badge-info CSS
         span.badge.badge-info JS
@@ -125,45 +139,50 @@ html
         | #[em Extremely] secured version of a membership website made for selling resources at my school.
         | Made mainly with Node, Express, and AWS.
       h3
-        a(target="_blank" href="https://nerdstagram.com/sarthaktexas/kahootbot") Kahoot Hack Bot 
+        a(target="_blank" rel="noreferrer noopener" href="https://nerdstagram.com/sarthaktexas/kahootbot") Kahoot Hack Bot 
         span.badge.badge-info Python
       h4
         | A bot to automagically answer Kahoot questions. Made when I was umm... young? So therefore it probably doesn't work anymore.
       h3
-        a(target="_blank" href="https://sarthakmohanty.me/403") Quizlet Hack Chrome Extension 
+        a(target="_blank" rel="noreferrer noopener" href="https://sarthakmohanty.me/403") Quizlet Hack Chrome Extension 
         span.badge.badge-info JS
       h4
         | A bot to automagically answer Quizlet Live questions. Made also when I was umm... young? So therefore it probably doesn't work anymore.
       h3
-        a(target="_blank" href="https://sciencebowl.sarthakmohanty.me") Science Bowl Timer and Scorekeeper 
+        a(target="_blank" rel="noreferrer noopener" href="https://sciencebowl.sarthakmohanty.me") Science Bowl Timer and Scorekeeper 
         span.badge.badge-info HTML 
         span.badge.badge-info CSS
         span.badge.badge-info JS
       h4
         | Made so teachers and club leaders could easily track score and track time in a practice match without a hassle. This can be used in an actual match however.
       h3
-        a(target="_blank" href="https://raw.githubusercontent.com/sarthaktexas/salamandarian/master/salamandarian.js") Salamandarian 
+        a(target="_blank" rel="noreferrer noopener" href="https://raw.githubusercontent.com/sarthaktexas/salamandarian/master/salamandarian.js") Salamandarian 
         span.badge.badge-info JS
       h4
         | Salamandarian was made and used to do a poorly-executed Biology lab. We were supposed to go to random.com and roll dice and do math and count numbers, but that's hard. Just put this script into your browser and repeat for however many times you need it! This is teacher-ception.
       h3
-        a(target="_blank" href="https://fiveable.me") fiveable.me 
+        a(target="_blank" rel="noreferrer noopener" href="https://sarthakmohanty.s3.amazonaws.com/Brand+Colors.pdf") Brand Colors 
         span.badge.badge-info Graphic Design
         span.badge.badge-info Brand Design
-      h4
-        | While the website has gone through #[em many] revisions throughout the years, I can proudly say I designed parts of the website at a time and designed many ads and marketing campaigns.
+      h4 Brand Guidelines for Sarthak Mohanty and Sarthak Mohanty, Inc.
       h3
-        a(target="_blank" href="https://nerdstagram.com/Standard-Structure/Standard-Structure") Standard-Structure/Standard-Structure 
+        a(target="_blank" rel="noreferrer noopener" href="https://fiveable.me") fiveable.me 
+        span.badge.badge-info Graphic Design
+        span.badge.badge-info Visual Design
+      h4
+        | I designed social media posts and stream thumbnails.
+      h3
+        a(target="_blank" rel="noreferrer noopener" href="https://nerdstagram.com/Standard-Structure/Standard-Structure") Standard-Structure/Standard-Structure 
         span.badge.badge-info Gatsby
       h4
         | A (updated) repo of templates for many different languages and technologies. I added the Gatsby.js technology template.
       h3
-        a(target="_blank" href="https://nerdstagram.com/renesansz/discord-greeter-bot") renesansz/discord-greeter-bot 
+        a(target="_blank" rel="noreferrer noopener" href="https://nerdstagram.com/renesansz/discord-greeter-bot") renesansz/discord-greeter-bot 
         span.badge.badge-info Discord.js
       h4
         | A discord bot that responds pong when you say ping. Used to teach discord.js to students.
       h3
-        a(target="_blank" href="https://nerdstagram.com/UndercoverGoose/quizlet") UndercoverGoose/quizlet 
+        a(target="_blank" rel="noreferrer noopener" href="https://nerdstagram.com/UndercoverGoose/quizlet") UndercoverGoose/quizlet 
         span.badge.badge-info JS
       h4
         | Quizlet, Kahoot, and Gimkit hacks (yay!). Let's hope my teacher's don't stumble down here.
@@ -171,7 +190,8 @@ html
       h2 Places where I'm mentioned:
       br
       h3
-        a(target="_blank" ref="https://www.expressnews.com/news/education/article/San-Antonio-charter-school-team-is-National-13732518.php") San Antonio charter school team is National Science Bowl bound
+        a(target="_blank" rel="noreferrer noopener" ref="https://www.expressnews.com/news/education/article/San-Antonio-charter-school-team-is-National-13732518.php") San Antonio charter school team is National Science Bowl bound 
+        span.badge.badge-white 2019
       h4 #[em San Antonio Middle School Regional Winner]
       br
       h2 Things I'm #[span.rainbow unusually] good at:
@@ -183,10 +203,11 @@ html
       button.skill 🏃 JS
       button.skill ⌨️ TypeScript
       button.skill 🍎 AppleScript
-      button.skill Markdown
+      button.skill 🔨 Markdown
       button.skill 🐍 Python
       button.skill 🐦 Swift
       button.skill 🔢 LaTeX
+      button.skill ⚙️ JSON
       br
       br
       h3 Technologies / Tools
@@ -197,10 +218,9 @@ html
       button.skill 🦕 Node.js
       button.skill 🚅 Express.js
       button.skill 🐻 Discord.js
-      button.skill 👷 Slack API
       button.skill 🤖 Heroku
       button.skill 🖥️ Amazon Web Services
-      button.skill ⚙️ JSON
+      button.skill ☁️ Cloudflare
       button.skill 📊 Splunk
       button.skill 📈 Grafana
       button.skill 🛡️ Sentry
@@ -214,27 +234,34 @@ html
       h3 Software
       br
       button.skill 📷 Adobe CC
-      button.skill 🧮 Wolfram
+      // button.skill 🧮 Wolfram
       button.skill ✒️ Figma
       button.skill 🌿 Overleaf
       button.skill 🗂️ Notion
       button.skill 🖊️ Canva
       button.skill 🪑 Airtable
-      p *tries to think of more, but isn't talented enough
+  footer
+    .center
+      p "I help grown-ups who lost their imagination make stuff look cool."
+      p &copy; Sarthak Mohanty 2020
       .icons
-        a(class='kofi' target='_blank' href='https://ko-fi.com/sarthak')
-          i.fas.fa-coffee
-        a(class='github' target='_blank' href='https://nerdstagram.com/sarthaktexas')
-          i.fab.fa-github
-        a(class='linkedin' target='_blank' href='https://linkedin.com/in/sarthaktexas/')
-          i.fab.fa-linkedin
-        a(class='twitter' target='_blank' href='https://twitter.com/sarthaktexas')
-          i.fab.fa-twitter
-        a(class='dribbble' target='_blank' href='https://dribbble.com/sarthakmohanty')
-          i.fab.fa-dribbble
-        a(class='behance' target='_blank' href='https://behance.net/sarthaktexas')
-          i.fab.fa-behance
-        a(class='instagram' target='_blank' href='https://instagram.com/sarthakmohantyy')
-          i.fab.fa-instagram
-        a(class='spotify' target='_blank' href='https://open.spotify.com/user/sarthak_m')
-          i.fab.fa-spotify
+        a(class='mail' target='_blank' rel="noreferrer noopener" href='mailto:hello@sarthakmohanty.me')
+          i.fas.fa-envelope(title='mail icon')
+        a(class='phone' target='_blank' rel="noreferrer noopener" href='tel:2107273516')
+          i.fas.fa-phone(title='phone icon')
+        a(class='kofi' target='_blank' rel="noreferrer noopener" href='https://ko-fi.com/sarthak')
+          i.fas.fa-coffee(title='coffee icon')
+        a(class='github' target='_blank' rel="noreferrer noopener" href='https://nerdstagram.com/sarthaktexas')
+          i.fab.fa-github(title='github icon')
+        a(class='linkedin' target='_blank' rel="noreferrer noopener" href='https://linkedin.com/in/sarthaktexas/')
+          i.fab.fa-linkedin(title='linkedin icon')
+        a(class='twitter' target='_blank' rel="noreferrer noopener" href='https://twitter.com/sarthaktexas')
+          i.fab.fa-twitter(title='twitter icon')
+        a(class='dribbble' target='_blank' rel="noreferrer noopener" href='https://dribbble.com/sarthakmohanty')
+          i.fab.fa-dribbble(title='dribbble icon')
+        a(class='behance' target='_blank' rel="noreferrer noopener" href='https://behance.net/sarthaktexas')
+          i.fab.fa-behance(title='behance icon')
+        a(class='instagram' target='_blank' rel="noreferrer noopener" href='https://instagram.com/sarthakmohantyy')
+          i.fab.fa-instagram(title='instagram icon')
+        a(class='spotify' target='_blank' rel="noreferrer noopener" href='https://open.spotify.com/user/sarthak_m')
+          i.fab.fa-spotify(title='spotify icon')

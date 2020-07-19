@@ -6,7 +6,6 @@ var path = require("path");
 
 app.use(express.static("public"));
 
-// View engine setup
 app.set("view engine", "pug");
 
 app.get("/", function(req, res) {
@@ -15,18 +14,24 @@ app.get("/", function(req, res) {
   });
 });
 
-app.get("/brand", function(req, res, next) {
-  var stream = fs.createReadStream("https://sarthakmohanty.s3.amazonaws.com/Brand+Colors.pdf");
-  var filename = "Brand Colors.pdf";
-  // Be careful of special characters
+app.get("/contact", function(req, res) {
+  res.render("contact", {
+    title: "Contact Me"
+  });
+});
 
-  filename = encodeURIComponent(filename);
-  // Ideally this should strip them
+app.get("/score", function(req, res) {
+  res.render("score", {
+    title: "Sarthak Mohanty - AP Scores"
+  });
+});
 
-  res.setHeader("Content-disposition", 'inline; filename="' + filename + '"');
-  res.setHeader("Content-type", "application/pdf");
+app.get("/grades", function(req, res) {
+  res.sendFile(path.join(__dirname+'/views/grades.html'));
+});
 
-  stream.pipe(res);
+app.use(function(req, res) {
+  res.status(404).render("error");
 });
 
 // listen for requests :)
