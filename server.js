@@ -20,14 +20,20 @@ app.get("/contact", function(req, res) {
   });
 });
 
-app.get("/score", function(req, res) {
-  res.render("score", {
-    title: "Sarthak Mohanty - AP Scores"
-  });
-});
+// app.get("/score", function(req, res) {
+//   res.render("score", {
+//     title: "Sarthak Mohanty - AP Scores"
+//   });
+// });
 
-app.get("/grades", function(req, res) {
-  res.sendFile(path.join(__dirname+'/views/grades.html'));
+// app.get("/grades", function(req, res) {
+//   res.sendFile(path.join(__dirname+'/views/grades.html'));
+// });
+
+app.get("/what", function(req, res) {
+  res.render("what", {
+    title: "What I'm Doing"
+  });
 });
 
 app.use(function(req, res) {
