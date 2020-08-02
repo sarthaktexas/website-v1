@@ -54,13 +54,19 @@ app.get("/tasks", async function(req, res) {
   try {
     await todoist.sync();
     const items = todoist.items.get();
+    //console.log(JSON.stringify(items));
     var tasklist = [];
     items.forEach(function(element) {
       tasklist.push(element.content);
     });
+    var taskdatelist = [];
+    items.forEach(function(element) {
+      taskdatelist.push(element.due.date);
+    });
     res.render("tasks", {
       title: "Tasks",
-      tasks: tasklist
+      tasks: tasklist,
+      taskdates: taskdatelist
     });
   } catch (error) {
     console.log(error);

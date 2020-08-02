@@ -42,7 +42,7 @@ html(lang='en')
       p
         em Yes, this is live from my to-do list. It is not static :)
       ul
-        each task in tasks
+        each task,date in tasks,taskdates
           li= task
         else
           p 😃 Sarthak's to-do list is E-M-P-T-Y. Shouldn't be, but is. Why not bother him? 210-727-3516. He's very good at 8ball.
