@@ -6,14 +6,18 @@ block content
       h1.rainbow Sarthak's Tasks
     p
       em Yes, this is live from my to-do list. It is not static and yup, this is exactly how organized it is too :)
-    p= taskList
-      each date in dates
-        p= date
-      ul
-        each task,date in tasks,dates
-          li #{task} Due: #{date}
-        else
-          p 😃 Sarthak's to-do list is E-M-P-T-Y. Shouldn't be, but is. Why not bother him? 210-727-3516. He's very good at 8ball.
+    table.table
+      tr
+        th(scope='col') task
+        th(scope='col') due date
+    tbody
+      tr
+        each task in tasks
+          td(scope='row')= task
+        each date in dates
+          td(scope='row')= date
+    // else
+         p 😃 Sarthak's to-do list is E-M-P-T-Y. Shouldn't be, but is. Why not bother him? 210-727-3516. He's very good at 8ball.
   footer
     .center
       p "I... am #[span.underline currently doing college apps]."
