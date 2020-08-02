@@ -54,19 +54,14 @@ app.get("/tasks", async function(req, res) {
   try {
     await todoist.sync();
     const items = todoist.items.get();
-    //console.log(items);
     const jsonitems = JSON.stringify(items);
-    // for(let i = 0; i < jsonitems.length; i++){
-    // let childArray = jsonitems[i].child;
-    // for(let j = 0; j < childArray.length; j++){
-    // console.log(childArray[j]);
-    // }}
+    var tasklist = [];
     items.forEach(function(element) {
-      var tasklist = element.content;
+      tasklist.push(element.content);
     });
     res.render("tasks", {
       title: "Tasks",
-      tasks: jsonitems
+      tasks: tasklist
     });
   } catch (error) {
     console.log(error);
