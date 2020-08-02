@@ -7,8 +7,6 @@ var iCloud = require("apple-icloud");
 var session = {};
 var username = process.env.ICLOUD_USERNAME;
 var password = process.env.ICLOUD_PASSWORD;
-console.log(username);
-console.log(password);
 
 var myCloud = new iCloud(session, username, password);
 myCloud.on("ready", function() {
@@ -49,6 +47,20 @@ app.get("/contact", function(req, res) {
     title: "Contact Me"
   });
 });
+
+app.get("/reminders", async function(req, res) {
+  try {
+    //const reminders = await myCloud.Reminders.getOpenTasks();
+    const folders = await myCloud.Mail.getFolders();
+    //console.log(folders);
+    res.render("reminders", {
+      title: "Reminders"
+    });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 app.get("/locate", async function(req, res) {
   try {
     var devices = await myCloud.FindMe.get();
