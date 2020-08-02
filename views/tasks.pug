@@ -36,14 +36,16 @@ html(lang='en')
     meta(name='msapplication-TileImage', content='msapplication-icon-144x144.png')
     meta(name='msapplication-TileColor', content='#140D1A')
   body
-    ul
-      each task in tasks
-        li= task
-      else
-        p Sarthak's to-do list is EMPTY. Why not bother him?
+    div
+      h2.rainbow Sarthak's Tasks
+      ul
+        each task in tasks
+          li= task
+        else
+          p Sarthak's to-do list is EMPTY. Why not bother him?
   footer
     .center
-      p "I help #[span.strike grown-ups who lost their imagination] make stuff look cool."
+      p "I help #[span.underline create the future]."
       p &copy; Sarthak Mohanty 2020
       .icons
         a(class='mail' target='_blank' rel="noreferrer noopener" href='mailto:hello@sarthakmohanty.me')

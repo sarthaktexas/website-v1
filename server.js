@@ -54,7 +54,6 @@ app.get("/tasks", async function(req, res) {
   try {
     await todoist.sync();
     const items = todoist.items.get();
-    const jsonitems = JSON.stringify(items);
     var tasklist = [];
     items.forEach(function(element) {
       tasklist.push(element.content);
