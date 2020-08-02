@@ -7,28 +7,24 @@ var iCloud = require("apple-icloud");
 var session = {};
 var username = process.env.ICLOUD_USERNAME;
 var password = process.env.ICLOUD_PASSWORD;
-
 console.log(username);
 console.log(password);
 
 var myCloud = new iCloud(session, username, password);
 myCloud.on("ready", function() {
-  const needsSecurityCode = myCloud.twoFactorAuthenticationIsRequired;
-
-  if (needsSecurityCode) {
-    console.error(
-      "Two Factor Authentication is required. Type in your security code!"
-    );
-  } else {
-    console.log("Everything okay. Go on!");
-  }
 });
 
-myCloud.Reminders.getCompletedTasks(function(err, tasks) {
+myCloud.login(username, password, function(err) {
+  if (err) {
+  }
+  myCloud.securityCode = process.env.ICLOUD2FACODE;
+  console.log("You logged in successfully!");
+  myCloud.Reminders.getCompletedTasks(function(err, tasks) {
   // If an error occurs
   if (err) return console.error(err);
   // All completed tasks (Not sorted by collections!)
   console.log(tasks);
+});
 });
 
 app.use(express.static("public"));
@@ -48,9 +44,9 @@ app.get("/contact", function(req, res) {
 });
 app.get("/reminders", async function(req, res) {
   const tasks = await myCloud.Reminders.getOpenTasks();
+  console.log(tasks);
   res.render("reminders", {
-    title: "Reminders",
-    tasks: tasks
+    title: "Reminders"
   });
 });
 
