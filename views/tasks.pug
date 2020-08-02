@@ -8,7 +8,10 @@ block content
       em Yes, this is live from my to-do list. It is not static and yup, this is exactly how organized it is too :)
     p= tasks
     p= dates
-    table.table
+    ul
+      each task in tasks
+      
+    //table.table
       thead
         tr
           th(scope='col') id
