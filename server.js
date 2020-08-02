@@ -36,7 +36,6 @@ app.get("/contact", function(req, res) {
   });
 });
 app.get("/location", async function(req, res) {
-  //const contacts = await myCloud.Contacts.list();
   var devices = await myCloud.FindMe.get();
   var longitude = JSON.stringify(devices.content[2].location.longitude);
   var latitude = JSON.stringify(devices.content[2].location.latitude);
