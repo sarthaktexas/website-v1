@@ -12,7 +12,8 @@
     "path": "^0.12.7",
     "pug": "^3.0.0",
     "fs": "^0.0.2",
-    "apple-icloud": "^1.0.2"
+    "apple-icloud": "^1.0.2",
+    "google-tasks-api": "^1.2.0"
   },
   "engines": {
     "node": "12.x"

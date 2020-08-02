@@ -3,6 +3,7 @@ var app = express();
 var router = express.Router();
 var fs = require("fs");
 var path = require("path");
+const googleTasksApi = require('google-tasks-api')
 var iCloud = require("apple-icloud");
 var session = {};
 var username = process.env.ICLOUD_USERNAME;
@@ -50,9 +51,7 @@ app.get("/contact", function(req, res) {
 
 app.get("/reminders", async function(req, res) {
   try {
-    //const reminders = await myCloud.Reminders.getOpenTasks();
-    const folders = await myCloud.Mail.getFolders();
-    //console.log(folders);
+    await googleTasksAPI.autorize('yourclientid')
     res.render("reminders", {
       title: "Reminders"
     });

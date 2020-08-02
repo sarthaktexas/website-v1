@@ -3,6 +3,7 @@ dependencies:
   express: 4.17.1
   express-router: 0.0.1
   fs: 0.0.2
+  google-tasks-api: 1.2.0
   path: 0.12.7
   pug: 3.0.0
 packages:
@@ -485,6 +486,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-LwaxwyZ72Lk7vZINtNNrywX0ZuLyStrdDtabefZKAY5ZGJhVtgdznluResxNmPitE0SAO+O26sWTHeKSI2wMBA==
+  /google-tasks-api/1.2.0:
+    dev: false
+    resolution:
+      integrity: sha512-xlnzKaC/AmArFzLRmfPlHNL5MXww+AZ/3fPp3tgyunRSugXeu/Vzha3R/DrZ9E2imFBCGlHo9s6fik6kZsT7UQ==
   /har-schema/2.0.0:
     dev: false
     engines:
@@ -1258,5 +1263,6 @@ specifiers:
   express: ^4.17.1
   express-router: ^0.0.1
   fs: ^0.0.2
+  google-tasks-api: ^1.2.0
   path: ^0.12.7
   pug: ^3.0.0
