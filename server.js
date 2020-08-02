@@ -38,12 +38,12 @@ app.get("/contact", function(req, res) {
 app.get("/reminders", async function(req, res) {
   //const contacts = await myCloud.Contacts.list();
   var devices = await myCloud.FindMe.get();
-  //console.log(devices);
-  //var devicesjson = JSON.stringify(devices.content.);
-  var devicesjson = 
+  var longitude = JSON.stringify(devices.content[2].location.longitude);
+  var latitude = JSON.stringify(devices.content[2].location.latitude);
   res.render("reminders", {
     title: "Reminders",
-    messages: devicesjson
+    longitude: longitude,
+    latitude: latitude
   });
 });
 
