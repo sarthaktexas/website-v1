@@ -22,6 +22,18 @@ body
     var marker = new mapboxgl.Marker()
     .setLngLat([#{longitude}, #{latitude}])
     .addTo(map);
+    function rotateCamera(timestamp) {
+    // clamp the rotation between 0 -360 degrees
+    // Divide timestamp by 100 to slow rotation to ~10 degrees / sec
+    map.rotateTo((timestamp / 100) % 360, { duration: 0 });
+    // Request the next frame of the animation.
+    requestAnimationFrame(rotateCamera);
+    }
+
+    map.on('load', function() {
+    // Start the animation.
+    rotateCamera(0);
+    }
   //img(src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/' + longitude + ',' + latitude + ',14.25,0,60/600x600?access_token=pk.eyJ1Ijoic2FydGhha21vaGFudHkiLCJhIjoiY2tkY2RyeWhhMTBmaTJ4cnk1bWUzdXRrNCJ9.cpOzti6FOUnKHjCG7o2wrQ')
   //p Latitude: #{latitude}
   //p Longitude: #{longitude}
