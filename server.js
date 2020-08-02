@@ -44,6 +44,8 @@ app.get("/locate", async function(req, res) {
     longitude: longitude,
     latitude: latitude
   });
+  .catch() {
+  }
 });
 
 // app.get("/score", function(req, res) {
