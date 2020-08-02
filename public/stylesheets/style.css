@@ -600,5 +600,5 @@ i:hover {
 }
 
 ul {
-  margin: auto;
+  list-style-type: "⚪️ ";
 }

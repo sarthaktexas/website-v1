@@ -37,15 +37,18 @@ html(lang='en')
     meta(name='msapplication-TileColor', content='#140D1A')
   body
     div
-      h2.rainbow Sarthak's Tasks
+      a(href="/" rel="noreferrer noopener")
+        h2.rainbow Sarthak's Tasks
+      p
+        em Yes, this is live from my to-do list. It is not static :)
       ul
         each task in tasks
           li= task
         else
-          p Sarthak's to-do list is EMPTY. Why not bother him?
+          p 😃 Sarthak's to-do list is E-M-P-T-Y. Shouldn't be, but is. Why not bother him? 210-727-3516. He's very good at 8ball.
   footer
     .center
-      p "I help #[span.underline create the future]."
+      p "I #[span.strike help create the future] am currently working on college apps."
       p &copy; Sarthak Mohanty 2020
       .icons
         a(class='mail' target='_blank' rel="noreferrer noopener" href='mailto:hello@sarthakmohanty.me')
