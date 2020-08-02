@@ -6,16 +6,19 @@ block content
       h1.rainbow Sarthak's Tasks
     p
       em Yes, this is live from my to-do list. It is not static and yup, this is exactly how organized it is too :)
+    p= tasks
+    p= dates
     table.table
-      tr
-        th(scope='col') task
-        th(scope='col') due date
-    tbody
-      tr
+      thead
+        tr
+          th(scope='col') task
+          th(scope='col') due date
+      tbody
         each task in tasks
-          td(scope='row')= task
-        each date in dates
-          td(scope='row')= date
+          tr
+            td(scope='row')= task
+          each date in dates
+            td= date
     // else
          p 😃 Sarthak's to-do list is E-M-P-T-Y. Shouldn't be, but is. Why not bother him? 210-727-3516. He's very good at 8ball.
   footer
