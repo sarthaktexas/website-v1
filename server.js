@@ -55,18 +55,19 @@ app.get("/tasks", async function(req, res) {
     await todoist.sync();
     const items = todoist.items.get();
     //console.log(JSON.stringify(items));
-    var tasklist = [];
+    var taskList = [];
     items.forEach(function(element) {
-      tasklist.push(element.content);
+      taskList.push(element.content);
     });
-    // var taskdatelist = [];
-    // items.forEach(function(element) {
-    //   taskdatelist.push(element.due);
-    //   console.log(taskdatelist);
-    // });
+    var taskDateList = [];
+    items.forEach(function(element) {
+      var jsonItemDate = JSON.stringify(element.due);
+      taskDateList.push(jsonItemDate.date);
+      console.log(jsonItemDate.date);
+    });
     res.render("tasks", {
       title: "Tasks",
-      tasks: tasklist
+      tasks: taskList
     });
   } catch (error) {
     console.log(error);
