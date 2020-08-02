@@ -66,13 +66,11 @@ app.get("/tasks", async function(req, res) {
     items.forEach(function(element) {
       taskDateList.push(element.due.date);
     });
-    var tasks = taskList.concat(taskDateList);
     console.log(tasks);
     res.render("tasks", {
       title: "Tasks",
       tasks: taskList,
-      dates: taskDateList,
-      taskList: tasks
+      dates: taskDateList
     });
   } catch (error) {
     console.log(error);
