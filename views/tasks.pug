@@ -40,15 +40,17 @@ html(lang='en')
       a(href="/" rel="noreferrer noopener")
         h2.rainbow Sarthak's Tasks
       p
-        em Yes, this is live from my to-do list. It is not static :)
+        em Yes, this is live from my to-do list. It is not static and yup, this is exactly how organized it is too :)
       ul
-        each task,date in tasks,taskdates
+        //each task,date in tasks,taskdates
+          li= task
+        each task in tasks
           li= task
         else
           p 😃 Sarthak's to-do list is E-M-P-T-Y. Shouldn't be, but is. Why not bother him? 210-727-3516. He's very good at 8ball.
   footer
     .center
-      p "I #[span.strike help create the future] am currently working on college apps."
+      p "I'm currently working on college apps."
       p &copy; Sarthak Mohanty 2020
       .icons
         a(class='mail' target='_blank' rel="noreferrer noopener" href='mailto:hello@sarthakmohanty.me')

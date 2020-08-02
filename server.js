@@ -59,14 +59,14 @@ app.get("/tasks", async function(req, res) {
     items.forEach(function(element) {
       tasklist.push(element.content);
     });
-    var taskdatelist = [];
-    items.forEach(function(element) {
-      taskdatelist.push(element.due.date);
-    });
+    // var taskdatelist = [];
+    // items.forEach(function(element) {
+    //   taskdatelist.push(element.due);
+    //   console.log(taskdatelist);
+    // });
     res.render("tasks", {
       title: "Tasks",
-      tasks: tasklist,
-      taskdates: taskdatelist
+      tasks: tasklist
     });
   } catch (error) {
     console.log(error);
