@@ -52,13 +52,16 @@ app.get("/contact", function(req, res) {
 
 app.get("/tasks", async function(req, res) {
   try {
+    // get todoist api
     await todoist.sync();
+    // get to do list array
     const items = todoist.items.get();
-    //console.log(JSON.stringify(items));
+    // List of to-do's
     var taskList = [];
     items.forEach(function(element) {
       taskList.push(element.content);
     });
+    // List of to-do dates
     var taskDateList = [];
     items.forEach(function(element) {
       var jsonItemDate = JSON.stringify(element.due);
@@ -76,7 +79,9 @@ app.get("/tasks", async function(req, res) {
 
 app.get("/locate", async function(req, res) {
   try {
+    // Get iCloud location
     var devices = await myCloud.FindMe.get();
+    // Get latitude & longitude
     var longitude = JSON.stringify(devices.content[2].location.longitude);
     var latitude = JSON.stringify(devices.content[2].location.latitude);
     res.render("location", {
