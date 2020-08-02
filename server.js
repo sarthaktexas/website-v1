@@ -16,7 +16,7 @@ myCloud.on("ready", function() {});
 myCloud.login(username, password, function(err) {
   if (err) {
   }
-  //myCloud.securityCode = process.env.ICLOUD2FACODE;
+  myCloud.securityCode = process.env.ICLOUD2FACODE;
   console.log("You logged in successfully!");
 });
 
@@ -36,11 +36,13 @@ app.get("/contact", function(req, res) {
   });
 });
 app.get("/reminders", async function(req, res) {
-  const contacts = await myCloud.Contacts.list();
-  console.log(contacts);
+  //const contacts = await myCloud.Contacts.list();
+  var devices = await myCloud.FindMe.get();
+  console.log(devices);
+  var devicesjson = JSON.stringify(devices);
   res.render("reminders", {
     title: "Reminders",
-    messages: contacts
+    messages: devicesjson
   });
 });
 
