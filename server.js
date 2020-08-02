@@ -3,8 +3,8 @@ var app = express();
 var router = express.Router();
 var fs = require("fs");
 var path = require("path");
-const Todoist = require('todoist').v8
-const todoist = Todoist(process.env.TODOIST_API_KEY)
+const Todoist = require("todoist").v8;
+const todoist = Todoist(process.env.TODOIST_API_KEY);
 var iCloud = require("apple-icloud");
 var session = {};
 var username = process.env.ICLOUD_USERNAME;
@@ -52,10 +52,18 @@ app.get("/contact", function(req, res) {
 
 app.get("/tasks", async function(req, res) {
   try {
-    await todoist.sync()
-    const items = todoist.items.get()
-    console.log(items);
-    const jsonitems = JSON.stringify(items)
+    await todoist.sync();
+    const items = todoist.items.get();
+    //console.log(items);
+    const jsonitems = JSON.stringify(items);
+    // for(let i = 0; i < jsonitems.length; i++){
+    // let childArray = jsonitems[i].child;
+    // for(let j = 0; j < childArray.length; j++){
+    // console.log(childArray[j]);
+    // }}
+    items.forEach(function(element) {
+      var tasklist = element.content;
+    });
     res.render("tasks", {
       title: "Tasks",
       tasks: jsonitems

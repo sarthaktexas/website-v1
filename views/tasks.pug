@@ -1,4 +1,6 @@
-//ul
-  for task in reminders
-    li= reminder
 p= tasks
+ul
+  each task, index in tasks
+    li= index + ': ' + task
+  else
+    li There are no values
