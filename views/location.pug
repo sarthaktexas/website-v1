@@ -20,8 +20,13 @@ body
     zoom: 16
     });
     var marker = new mapboxgl.Marker()
-    .setLngLat([#{longitude}, #{latitude}])
-    .addTo(map);
+      .setLngLat([#{longitude}, #{latitude}])
+      .addTo(map)
+      .setPopup(popup);
+    var popup = new mapboxgl.Popup({ closeOnClick: false })
+      .setLngLat([#{longitude}, #{latitude}])
+      .setHTML('<h1>I\'m Here!</h1>')
+      .addTo(map);
     function rotateCamera(timestamp) {
     // clamp the rotation between 0 -360 degrees
     // Divide timestamp by 100 to slow rotation to ~10 degrees / sec
