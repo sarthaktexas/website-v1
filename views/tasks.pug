@@ -7,9 +7,10 @@ block content
       p
         em Yes, this is live from my to-do list. It is not static and yup, this is exactly how organized it is too :)
       p= dates
-      ul
+      each date in dates
+        p= date
+      //ul
         each task,date in tasks,dates
-          li #{task}
-          li #{date}
+          li #{task} Due: #{date}
         else
           p 😃 Sarthak's to-do list is E-M-P-T-Y. Shouldn't be, but is. Why not bother him? 210-727-3516. He's very good at 8ball.
