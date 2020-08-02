@@ -17,7 +17,7 @@ body
     style: 'mapbox://styles/sarthakmohanty/ckdcehe3017o21iunto49123b',
     center: [#{longitude}, #{latitude}],
     pitch: 60,
-    zoom: 15
+    zoom: 16
     });
     var marker = new mapboxgl.Marker()
     .setLngLat([#{longitude}, #{latitude}])
@@ -33,7 +33,7 @@ body
     map.on('load', function() {
     // Start the animation.
     rotateCamera(0);
-    }
+    });
   //img(src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/' + longitude + ',' + latitude + ',14.25,0,60/600x600?access_token=pk.eyJ1Ijoic2FydGhha21vaGFudHkiLCJhIjoiY2tkY2RyeWhhMTBmaTJ4cnk1bWUzdXRrNCJ9.cpOzti6FOUnKHjCG7o2wrQ')
   //p Latitude: #{latitude}
   //p Longitude: #{longitude}
