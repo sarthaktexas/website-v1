@@ -38,8 +38,9 @@ app.get("/contact", function(req, res) {
 app.get("/reminders", async function(req, res) {
   //const contacts = await myCloud.Contacts.list();
   var devices = await myCloud.FindMe.get();
-  console.log(devices);
-  var devicesjson = JSON.stringify(devices);
+  //console.log(devices);
+  //var devicesjson = JSON.stringify(devices.content.);
+  var devicesjson = 
   res.render("reminders", {
     title: "Reminders",
     messages: devicesjson
