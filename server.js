@@ -3,7 +3,8 @@ var app = express();
 var router = express.Router();
 var fs = require("fs");
 var path = require("path");
-const googleTasksApi = require('google-tasks-api')
+const Todoist = require('todoist').v8
+const todoist = Todoist(process.env.TODOIST_API_KEY)
 var iCloud = require("apple-icloud");
 var session = {};
 var username = process.env.ICLOUD_USERNAME;
@@ -49,11 +50,15 @@ app.get("/contact", function(req, res) {
   });
 });
 
-app.get("/reminders", async function(req, res) {
+app.get("/tasks", async function(req, res) {
   try {
-    await googleTasksAPI.autorize('yourclientid')
-    res.render("reminders", {
-      title: "Reminders"
+    await todoist.sync()
+    const items = todoist.items.get()
+    console.log(items);
+    const jsonitems = JSON.stringify(items)
+    res.render("tasks", {
+      title: "Tasks",
+      tasks: jsonitems
     });
   } catch (error) {
     console.log(error);
