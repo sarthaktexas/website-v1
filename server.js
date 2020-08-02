@@ -11,13 +11,27 @@ console.log(username);
 console.log(password);
 
 var myCloud = new iCloud(session, username, password);
-myCloud.on("ready", function() {});
+myCloud.on("ready", function() {
+  const needsSecurityCode = myCloud.twoFactorAuthenticationIsRequired;
+
+  if (needsSecurityCode) {
+    console.error(
+      "Two Factor Authentication is required. Type in your security code!"
+    );
+  } else {
+    console.log("Everything okay. Go on!");
+  }
+});
 
 myCloud.login(username, password, function(err) {
   if (err) {
   }
   myCloud.securityCode = process.env.ICLOUD2FACODE;
   console.log("You logged in successfully!");
+});
+
+myCloud.on("sessionUpdate", function() {
+  myCloud.saveSession();
 });
 
 app.use(express.static("public"));
