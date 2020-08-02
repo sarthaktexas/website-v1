@@ -6,9 +6,10 @@ block content
         h2.rainbow Sarthak's Tasks
       p
         em Yes, this is live from my to-do list. It is not static and yup, this is exactly how organized it is too :)
-      p= dates
-      each date in dates
+      p= taskList
+      //each date in dates
         p= date
+        p= taskList
       //ul
         each task,date in tasks,dates
           li #{task} Due: #{date}
