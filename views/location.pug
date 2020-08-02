@@ -1,3 +1,26 @@
-img(src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/' + longitude + ',' + latitude + ',14.25,0,60/600x600?access_token=pk.eyJ1Ijoic2FydGhha21vaGFudHkiLCJhIjoiY2tkY2RyeWhhMTBmaTJ4cnk1bWUzdXRrNCJ9.cpOzti6FOUnKHjCG7o2wrQ')
-p Latitude: #{latitude}
-p Longitude: #{longitude}
+doctype html
+head
+  meta(charset='utf-8')
+  title= title
+  meta(name='viewport', content='initial-scale=1,maximum-scale=1,user-scalable=no')
+  script(src='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js')
+  link(href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css', rel='stylesheet')
+  style.
+    body { margin: 0; padding: 0; }
+    #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+body
+  #map
+  script.
+    mapboxgl.accessToken = 'pk.eyJ1Ijoic2FydGhha21vaGFudHkiLCJhIjoiY2tkY2RyeWhhMTBmaTJ4cnk1bWUzdXRrNCJ9.cpOzti6FOUnKHjCG7o2wrQ';
+    var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: [#{longitude}, #{latitude}],
+    zoom: 15
+    });
+    var marker = new mapboxgl.Marker()
+    .setLngLat([#{longitude}, #{latitude}])
+    .addTo(map);
+  //img(src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/' + longitude + ',' + latitude + ',14.25,0,60/600x600?access_token=pk.eyJ1Ijoic2FydGhha21vaGFudHkiLCJhIjoiY2tkY2RyeWhhMTBmaTJ4cnk1bWUzdXRrNCJ9.cpOzti6FOUnKHjCG7o2wrQ')
+  //p Latitude: #{latitude}
+  //p Longitude: #{longitude}
