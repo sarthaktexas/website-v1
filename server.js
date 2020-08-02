@@ -64,13 +64,15 @@ app.get("/tasks", async function(req, res) {
     // List of to-do dates
     var taskDateList = [];
     items.forEach(function(element) {
-      var jsonItemDate = JSON.stringify(element.due);
-      taskDateList.push(jsonItemDate.date);
-      console.log(jsonItemDate.date);
+      taskDateList.push(element.due.date);
     });
+    var taskDateListJson = JSON.stringify(taskDateList);
+    console.log(taskList);
+    console.log
     res.render("tasks", {
       title: "Tasks",
-      tasks: taskList
+      tasks: taskList,
+      dates: taskDateListJson
     });
   } catch (error) {
     console.log(error);
