@@ -1,17 +1,41 @@
 extends layout
 
 block content
-    div
-      a(href="/" rel="noreferrer noopener")
-        h2.rainbow Sarthak's Tasks
-      p
-        em Yes, this is live from my to-do list. It is not static and yup, this is exactly how organized it is too :)
-      p= taskList
-      //each date in dates
+  div
+    a(href="/" rel="noreferrer noopener")
+      h1.rainbow Sarthak's Tasks
+    p
+      em Yes, this is live from my to-do list. It is not static and yup, this is exactly how organized it is too :)
+    p= taskList
+      each date in dates
         p= date
-        p= taskList
-      //ul
+      ul
         each task,date in tasks,dates
           li #{task} Due: #{date}
         else
           p 😃 Sarthak's to-do list is E-M-P-T-Y. Shouldn't be, but is. Why not bother him? 210-727-3516. He's very good at 8ball.
+  footer
+    .center
+      p "I... am #[span.underline currently doing college apps]."
+      p &copy; Sarthak Mohanty 2020
+      .icons
+        a(class='mail' target='_blank' rel="noreferrer noopener" href='mailto:hello@sarthakmohanty.me')
+          i.fas.fa-envelope(title='mail icon')
+        a(class='phone' target='_blank' rel="noreferrer noopener" href='tel:+12107273516')
+          i.fas.fa-phone(title='phone icon')
+        a(class='kofi' target='_blank' rel="noreferrer noopener" href='https://ko-fi.com/sarthak')
+          i.fas.fa-coffee(title='coffee icon')
+        a(class='github' target='_blank' rel="noreferrer noopener" href='https://nerdstagram.com/sarthaktexas')
+          i.fab.fa-github(title='github icon')
+        a(class='linkedin' target='_blank' rel="noreferrer noopener" href='https://linkedin.com/in/sarthaktexas/')
+          i.fab.fa-linkedin(title='linkedin icon')
+        a(class='twitter' target='_blank' rel="noreferrer noopener" href='https://twitter.com/sarthaktexas')
+          i.fab.fa-twitter(title='twitter icon')
+        a(class='dribbble' target='_blank' rel="noreferrer noopener" href='https://dribbble.com/sarthakmohanty')
+          i.fab.fa-dribbble(title='dribbble icon')
+        a(class='behance' target='_blank' rel="noreferrer noopener" href='https://behance.net/sarthaktexas')
+          i.fab.fa-behance(title='behance icon')
+        a(class='instagram' target='_blank' rel="noreferrer noopener" href='https://instagram.com/sarthakmohantyy')
+          i.fab.fa-instagram(title='instagram icon')
+        a(class='spotify' target='_blank' rel="noreferrer noopener" href='https://open.spotify.com/user/sarthak_m')
+          i.fab.fa-spotify(title='spotify icon')

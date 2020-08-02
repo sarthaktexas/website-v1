@@ -66,7 +66,6 @@ app.get("/tasks", async function(req, res) {
     items.forEach(function(element) {
       taskDateList.push(element.due.date);
     });
-    console.log(tasks);
     res.render("tasks", {
       title: "Tasks",
       tasks: taskList,
@@ -94,11 +93,12 @@ app.get("/locate", async function(req, res) {
   }
 });
 
-// app.get("/score", function(req, res) {
-//   res.render("score", {
-//     title: "Sarthak Mohanty - AP Scores"
-//   });
-// });
+app.get("/score", function(req, res) {
+  res.send("This page is currently under maintenance.")
+  // res.render("score", {
+  //   title: "Sarthak Mohanty - AP Scores"
+  // });
+});
 
 app.get("/grades", function(req, res) {
   res.sendFile(path.join(__dirname + "/views/grades.html"));
