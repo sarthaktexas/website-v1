@@ -59,17 +59,17 @@ app.get("/tasks", async function(req, res) {
     // List of to-do's
     var taskList = [];
     items.forEach(function(element) {
-      taskList.push(element.content);
+      taskList.push({
+        task: element.content,
+        date: element.due.string,
+        checked: element.checked,
+        labels: element.labels
+      });
     });
-    // List of to-do dates
-    var taskDateList = [];
-    items.forEach(function(element) {
-      taskDateList.push(element.due.date);
-    });
+    console.log(taskList);
     res.render("tasks", {
       title: "Tasks",
-      tasks: taskList,
-      dates: taskDateList
+      tasks: taskList
     });
   } catch (error) {
     console.log(error);
@@ -94,7 +94,7 @@ app.get("/locate", async function(req, res) {
 });
 
 app.get("/score", function(req, res) {
-  res.send("This page is currently under maintenance.")
+  res.send("This page is currently under maintenance.");
   // res.render("score", {
   //   title: "Sarthak Mohanty - AP Scores"
   // });
