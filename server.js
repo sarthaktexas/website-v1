@@ -65,7 +65,7 @@ app.get("/tasks", async function(req, res) {
         date: element.due.string,
         checked: element.checked,
         priority: element.priority,
-        recurring: element.is_recurring
+        recurring: element.due.is_recurring
       });
       }
       else {
@@ -74,7 +74,7 @@ app.get("/tasks", async function(req, res) {
         date: false,
         checked: element.checked,
         priority: '0',
-        recurring: element.is_recurring
+        recurring: false
       });
       }
     });

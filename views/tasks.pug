@@ -8,19 +8,23 @@ block content
       em Yes, this is live from my to-do list. It is not static and yup, this is exactly how organized it is too :)
     ul
       each task in tasks
-        if task.date
-          li
-            | #{task.task}
-            | by #{task.date} and #{task.recurring}
-            | #[span.badge.badge-info #{task.priority}]
-            if task.recurring
-              | 🔁
+        if !task.checked
+          if task.date
+            li
+              | #{task.task}
+              | #{task.date}
+              | #[span.badge.badge-info #{task.priority}]
+              if task.recurring
+                | 🔁
+          else
+            li
+              | #{task.task}
+              | #[span.badge.badge-info #{task.priority}]
+              if task.recurring
+                | 🔁
         else
           li
-            | #{task.task}
-            | #[span.badge.badge-info #{task.priority}]
-            if task.recurring
-              | 🔁
+            | #[span.strike #{task.task}]
       else
         p 😃 Sarthak's to-do list is E-M-P-T-Y. Shouldn't be, but is. Why not bother him? 210-727-3516. He's very good at 8ball.
   footer
