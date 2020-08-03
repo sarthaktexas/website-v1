@@ -116,7 +116,13 @@ app.get("/grades", function(req, res) {
   res.sendFile(path.join(__dirname + "/views/grades.html"));
 });
 
+app.get("/api*", function(req, res) {
+  res.send("seems like you don't know how to use this api. ask Sarthak.");
+});
 
+app.get("/api/about", function(req, res) {
+  res.json();
+});
 
 app.use(function(req, res) {
   res.status(404).render("error");
