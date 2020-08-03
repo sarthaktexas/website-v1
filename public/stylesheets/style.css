@@ -514,3 +514,43 @@ i:hover {
 td {
   margin-right: 5px;
 }
+
+.red {
+  color: red;
+}
+
+.orange {
+  color: orange;
+}
+
+.yellow {
+  color: yellow;
+}
+
+.green {
+  color: green;
+}
+
+.blue {
+  color: blue;
+}
+
+.dodgerblue {
+  color: dodgerblue;
+}
+
+.purple {
+  color: purple;
+}
+
+.pink {
+  color: pink;
+}
+
+.white {
+  color: white;
+}
+
+.black {
+  color: black;
+}

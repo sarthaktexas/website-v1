@@ -11,9 +11,26 @@ block content
         if !task.checked
           if task.date
             if task.priority === 4
-              li.rainbow
-                | #{task.task} 
-                strong #{task.date} 
+              li.red
+                | #[em.red #{task.task}] 
+                strong
+                  em #{task.date} 
+                | #[span.badge.badge-info #{task.priority}]
+                if task.recurring
+                  | 🔁
+            else if task.priority === 3
+              li.orange
+                | #[em.orange #{task.task}] 
+                strong
+                  em #{task.date} 
+                | #[span.badge.badge-info #{task.priority}]
+                if task.recurring
+                  | 🔁
+            else if task.priority === 2
+              li.yellow
+                | #[em.yellow #{task.task}] 
+                strong
+                  em #{task.date} 
                 | #[span.badge.badge-info #{task.priority}]
                 if task.recurring
                   | 🔁
