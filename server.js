@@ -119,7 +119,7 @@ app.get("/grades", function(req, res) {
 const data = require('./info.json')
 
 app.get("/api/about", function(req, res) {
-  res.json(data);
+  res.send(JSON.stringify(data, undefined, 4));
 });
 
 app.get("/api*", function(req, res) {
