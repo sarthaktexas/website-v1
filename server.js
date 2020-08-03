@@ -59,27 +59,26 @@ app.get("/tasks", async function(req, res) {
     // List of to-do's
     var taskList = [];
     items.forEach(function(element) {
-      if (element.due) {
-      taskList.push({
-        task: element.content,
-        date: element.due.string,
-        checked: element.checked,
-        priority: element.priority,
-        recurring: element.due.is_recurring
-      });
-      }
-      else {
-        taskList.push({
-        task: element.content,
-        date: false,
-        checked: element.checked,
-        priority: '0',
-        recurring: false
-      });
-      }
+      console.log(element.checked);
+        if (element.due) {
+          taskList.push({
+            task: element.content,
+            date: element.due.string,
+            checked: element.checked,
+            priority: element.priority,
+            recurring: element.due.is_recurring
+          });
+        } else {
+          taskList.push({
+            task: element.content,
+            date: false,
+            checked: element.checked,
+            priority: "0",
+            recurring: false
+          });
+        }
     });
-    console.log(JSON.stringify(items));
-    console.log(taskList);
+    console.log(items);
     res.render("tasks", {
       title: "Tasks",
       tasks: taskList
