@@ -71,14 +71,14 @@ app.get("/tasks", async function(req, res) {
       else {
         taskList.push({
         task: element.content,
-        date: 'No Date',
+        date: false,
         checked: element.checked,
         priority: '0',
         is_recurring: false
       });
       }
     });
-    console.log(items);
+    console.log(JSON.stringify(items));
     console.log(taskList);
     res.render("tasks", {
       title: "Tasks",

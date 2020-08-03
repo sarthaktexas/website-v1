@@ -6,23 +6,33 @@ block content
       h1.rainbow Sarthak's Tasks
     p
       em Yes, this is live from my to-do list. It is not static and yup, this is exactly how organized it is too :)
-    table.table
+    //table.table
       thead
         tr
           th(scope='col') Task
           th(scope='col') Date
           th(scope='col') Priority
-          th(scope=)
+          th(scope='col') Other Notes
       tbody
         each task in tasks
           tr
             td(scope='row')
-              li= task.task
+              li #{task.task}
+              p #{task.date}
             td= task.date
             td
               span.badge.badge-info= task.priority
+            td
+              if task.recurring
+                p 🔁
+              else
+                p No Notes.
     // else
          p 😃 Sarthak's to-do list is E-M-P-T-Y. Shouldn't be, but is. Why not bother him? 210-727-3516. He's very good at 8ball.
+  ul
+    each task in tasks
+      if task.date
+      li #{task.task} by #{task.date}
   footer
     .center
       p "I... am #[span.underline currently doing college apps]."
