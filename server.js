@@ -59,23 +59,23 @@ app.get("/tasks", async function(req, res) {
     // List of to-do's
     var taskList = [];
     items.forEach(function(element) {
-        if (element.due) {
-          taskList.push({
-            task: element.content,
-            date: element.due.string,
-            checked: element.checked,
-            priority: element.priority,
-            recurring: element.due.is_recurring
-          });
-        } else {
-          taskList.push({
-            task: element.content,
-            date: false,
-            checked: element.checked,
-            priority: "0",
-            recurring: false
-          });
-        }
+      if (element.due) {
+        taskList.push({
+          task: element.content,
+          date: element.due.string,
+          checked: element.checked,
+          priority: element.priority,
+          recurring: element.due.is_recurring
+        });
+      } else {
+        taskList.push({
+          task: element.content,
+          date: false,
+          checked: element.checked,
+          priority: "0",
+          recurring: false
+        });
+      }
     });
     // Debug stuff
     //console.log(JSON.stringify(items));
@@ -90,6 +90,13 @@ app.get("/tasks", async function(req, res) {
 
 app.get("/locate", async function(req, res) {
   try {
+    // Log in again just to make sure
+    myCloud.login(username, password, function(err) {
+      if (err) {
+      }
+      myCloud.securityCode = process.env.ICLOUD2FACODE;
+      console.log("You logged in again successfully!");
+    });
     // Get iCloud location
     var devices = await myCloud.FindMe.get();
     // Get latitude & longitude
@@ -102,7 +109,6 @@ app.get("/locate", async function(req, res) {
     });
   } catch (error) {
     console.log(error);
-    
   }
 });
 
@@ -117,7 +123,7 @@ app.get("/grades", function(req, res) {
   res.sendFile(path.join(__dirname + "/views/grades.html"));
 });
 
-const data = require('./info.json')
+const data = require("./info.json");
 
 app.get("/api*", function(req, res) {
   res.send("seems like you don't know how to use this api. ask Sarthak.");
