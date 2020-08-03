@@ -118,10 +118,6 @@ app.get("/grades", function(req, res) {
 
 const data = require('./info.json')
 
-app.get("/api/about", function(req, res) {
-  res.send(JSON.stringify(data, undefined, 4));
-});
-
 app.get("/api*", function(req, res) {
   res.send("seems like you don't know how to use this api. ask Sarthak.");
 });
