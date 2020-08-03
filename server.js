@@ -74,7 +74,7 @@ app.get("/tasks", async function(req, res) {
         date: false,
         checked: element.checked,
         priority: '0',
-        is_recurring: false
+        recurring: element.is_recurring
       });
       }
     });
