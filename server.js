@@ -116,23 +116,11 @@ app.get("/grades", function(req, res) {
   res.sendFile(path.join(__dirname + "/views/grades.html"));
 });
 
+const data = require('./info.json')
+
 app.get("/api/about", function(req, res) {
-  res.json({
-    "name": "Sarthak",
-    "description": "High School Junior. Full Stack Developer. Designer",
-    "gradeLevel": "11",
-    "social": {
-      "github": "https://nerdstagram.com/sarthaktexas"
-    }
-  });
+  res.json(data);
 });
-
-const data = require('/path/to/datainfo.json')
-
-app.get('/search', function (req, res) {
-  res.header("Content-Type",'application/json');
-  res.send(JSON.stringify(data));
-})
 
 app.get("/api*", function(req, res) {
   res.send("seems like you don't know how to use this api. ask Sarthak.");
