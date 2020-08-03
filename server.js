@@ -116,6 +116,8 @@ app.get("/grades", function(req, res) {
   res.sendFile(path.join(__dirname + "/views/grades.html"));
 });
 
+
+
 app.use(function(req, res) {
   res.status(404).render("error");
 });
