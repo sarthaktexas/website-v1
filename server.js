@@ -59,7 +59,6 @@ app.get("/tasks", async function(req, res) {
     // List of to-do's
     var taskList = [];
     items.forEach(function(element) {
-      console.log(element.checked);
         if (element.due) {
           taskList.push({
             task: element.content,
@@ -78,7 +77,7 @@ app.get("/tasks", async function(req, res) {
           });
         }
     });
-    console.log(items);
+    console.log(taskList[1].priority);
     res.render("tasks", {
       title: "Tasks",
       tasks: taskList

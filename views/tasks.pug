@@ -11,8 +11,8 @@ block content
         if !task.checked
           if task.date
             li
-              | #{task.task}
-              | #{task.date}
+              | #{task.task} 
+              strong #{task.date} 
               | #[span.badge.badge-info #{task.priority}]
               if task.recurring
                 | 🔁
