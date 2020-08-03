@@ -10,12 +10,20 @@ block content
       each task in tasks
         if !task.checked
           if task.date
-            li
-              | #{task.task} 
-              strong #{task.date} 
-              | #[span.badge.badge-info #{task.priority}]
-              if task.recurring
-                | 🔁
+            if task.priority === 4
+              li.rainbow
+                | #{task.task} 
+                strong #{task.date} 
+                | #[span.badge.badge-info #{task.priority}]
+                if task.recurring
+                  | 🔁
+            else
+              li
+                | #{task.task} 
+                strong #{task.date} 
+                | #[span.badge.badge-info #{task.priority}]
+                if task.recurring
+                  | 🔁
           else
             li
               | #{task.task}

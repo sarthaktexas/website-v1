@@ -77,7 +77,8 @@ app.get("/tasks", async function(req, res) {
           });
         }
     });
-    console.log(taskList[1].priority);
+    // Debug stuff
+    //console.log(JSON.stringify(items));
     res.render("tasks", {
       title: "Tasks",
       tasks: taskList
