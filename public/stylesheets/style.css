@@ -504,69 +504,13 @@ and (orientation: landscape) {
 .mobile-header {
   display: none;
 }
-
-@media only screen and (max-width: 760px) {
-  p {
-    display: block;
-    font-weight: bold;
-  }
-
-  table tr td:not(:first-child), table tr th:not(:first-child), table tr td:not(.total-val) {
-    display: none;
-  }
-  table tr:nth-of-type(even) td:first-child {
-    background-color: #d9f4f2;
-  }
-  table tr:nth-of-type(odd) td:first-child {
-    background-color: white;
-  }
-  table tr:nth-of-type(even) td:not(:first-child) {
-    background-color: white;
-  }
-  table tr th:first-child {
-    width: 100%;
-    display: block;
-  }
-  table tr th:not(:first-child) {
-    width: 40%;
-    transition: transform 0.4s ease-out;
-    transform: translateY(-9999px);
-    position: relative;
-    z-index: -1;
-  }
-  table tr td:not(:first-child) {
-    transition: transform 0.4s ease-out;
-    transform: translateY(-9999px);
-    width: 60%;
-    position: relative;
-    z-index: -1;
-  }
-  table tr td:first-child {
-    display: block;
-    cursor: pointer;
-  }
-  table tr.total th {
-    width: 25%;
-    display: inline-block;
-  }
-  table tr td.total-val {
-    display: inline-block;
-    transform: translateY(0);
-    width: 75%;
-  }
-}
-@media only screen and (max-width: 300px) {
-  table tr th:not(:first-child) {
-    width: 50%;
-    font-size: 14px;
-  }
-  table tr td:not(:first-child) {
-    width: 50%;
-    font-size: 14px;
-  }
-}
+ 
 
 i:hover {
   transform: scale(1.3);
   color: #FF5757;
+}
+
+td {
+  margin-right: 5px;
 }

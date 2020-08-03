@@ -11,12 +11,16 @@ block content
         tr
           th(scope='col') Task
           th(scope='col') Date
+          th(scope='col') Priority
+          th(scope=)
       tbody
         each task in tasks
           tr
             td(scope='row')
               li= task.task
             td= task.date
+            td
+              span.badge.badge-info= task.priority
     // else
          p 😃 Sarthak's to-do list is E-M-P-T-Y. Shouldn't be, but is. Why not bother him? 210-727-3516. He's very good at 8ball.
   footer
