@@ -88,7 +88,7 @@ app.get("/tasks", async function(req, res) {
   }
 });
 
-app.get("/locateskdhebdidhw", async function(req, res) {
+app.get("/locate", async function(req, res) {
   try {
     // Log in again just to make sure
     myCloud.login(username, password, function(err) {
