@@ -106,9 +106,16 @@ app.get("/locate", async function(req, res) {
       title: "Location",
       longitude: longitude,
       latitude: latitude
+      //longitude: "-98.628067",
+      //latitude: "29.645479"
     });
   } catch (error) {
     console.log(error);
+    res.render("location", {
+      title: "Location",
+      longitude: "-98.628067",
+      latitude: "29.645479"
+    });
   }
 });
 
