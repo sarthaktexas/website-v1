@@ -45,9 +45,7 @@ app.get("/", function(req, res) {
 });
 
 app.get("/contact", function(req, res) {
-  res.render("contact", {
-    title: "Contact Me"
-  });
+  res.redirect("https://sarthakmohanty.me/contact");
 });
 
 app.get("/tasks", async function(req, res) {
@@ -127,13 +125,15 @@ app.get("/score", function(req, res) {
 });
 
 app.get("/about", function(req, res) {
-  res.redirect('https://www.notion.so/Directory-Of-Sarthak-8feff445502242ce9cf106795364b360');
+  res.redirect(
+    "https://www.notion.so/Directory-Of-Sarthak-8feff445502242ce9cf106795364b360"
+  );
 });
 
-//https://www.notion.so/Directory-Of-Sarthak-8feff445502242ce9cf106795364b360
-
-app.get("/grades", function(req, res) {
-  res.sendFile(path.join(__dirname + "/views/grades.html"));
+app.get("/about", function(req, res) {
+  res.redirect(
+    "https://www.notion.so/Directory-Of-Sarthak-8feff445502242ce9cf106795364b360"
+  );
 });
 
 const data = require("./info.json");
