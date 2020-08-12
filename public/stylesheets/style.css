@@ -488,6 +488,11 @@ and (orientation: landscape) {
     background-color: #FFF;
 }
 
+.badge-new {
+    color: black;
+    background-color: #01FDF6;
+}
+
 .error {
   max-width: 100%;
   text-align: center;
