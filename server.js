@@ -54,6 +54,7 @@ app.get("/tasks", async function(req, res) {
     await todoist.sync();
     // get to do list array
     const items = todoist.items.get();
+    console.log(items);
     // List of to-do's
     var taskList = [];
     items.forEach(function(element) {
@@ -63,7 +64,8 @@ app.get("/tasks", async function(req, res) {
           date: element.due.string,
           checked: element.checked,
           priority: element.priority,
-          recurring: element.due.is_recurring
+          recurring: element.due.is_recurring,
+          projectid: element.project_id
         });
       } else {
         taskList.push({
@@ -86,7 +88,7 @@ app.get("/tasks", async function(req, res) {
   }
 });
 
-app.get("/locate", async function(req, res) {
+app.get("/locateshdns", async function(req, res) {
   try {
     // Log in again just to make sure
     myCloud.login(username, password, function(err) {
