@@ -88,7 +88,7 @@ app.get("/tasks", async function(req, res) {
   }
 });
 
-app.get("/locateshdns", async function(req, res) {
+app.get("/locate", async function(req, res) {
   try {
     // Log in again just to make sure
     myCloud.login(username, password, function(err) {
@@ -104,10 +104,10 @@ app.get("/locateshdns", async function(req, res) {
     var latitude = JSON.stringify(devices.content[2].location.latitude);
     res.render("location", {
       title: "Location",
-      longitude: longitude,
-      latitude: latitude
-      //longitude: "-98.628067",
-      //latitude: "29.645479"
+      //longitude: longitude,
+      //latitude: latitude
+      longitude: "-98.628067",
+      latitude: "29.645479"
     });
   } catch (error) {
     console.log(error);
