@@ -508,11 +508,13 @@ and (orientation: landscape) {
 
 .badge-pinkgradient {
   color: black;
+  background-color: #FF5757;
   background-image: url(https://www.creativefabrica.com/wp-content/uploads/2020/03/08/Gradient-Rainbow-Background-Graphics-3304110-1-1-580x387.jpg);
 }
 
 .badge-bluegradient {
   color: black;
+  background-color: #FF5757;
   background-image: url(https://www.creativefabrica.com/wp-content/uploads/2020/03/08/Gradient-Rainbow-Background-Graphics-3304110-1-1-580x387.jpg);
   background-position: 25% 75%;
 }
