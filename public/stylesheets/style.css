@@ -535,7 +535,6 @@ and (orientation: landscape) {
 .mobile-header {
   display: none;
 }
- 
 
 i:hover {
   transform: scale(1.3);
@@ -575,7 +574,7 @@ td {
 }
 
 .pink {
-  color: pink;
+  color: deeppink;
 }
 
 .white {
