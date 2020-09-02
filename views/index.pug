@@ -1,298 +1,263 @@
-doctype html
-html(lang='en')
-  head
-    meta(charset='utf-8')
-    meta(http-equiv='X-UA-Compatible', content='IE=edge')
-    meta(name='viewport', content='width=device-width,initial-scale=1')
-    meta(name="twitter:card" content="summary")
-    meta(name='description' content='I\'m Sarthak Mohanty, a rising high school junior and a full-stack developer and designer.')
-    meta(name='keywords' content='Sarthak, Mohanty, san, antonio, design, designer, developer, programmer, html, css, js, node, express')
-    meta(name='author' content='Sarthak Mohanty')
-    meta(name='twitter:card' content='summary')
-    meta(name='twitter:site' content='@sarthaktexas')
-    meta(name='twitter:creator' content='@sarthaktexas')
-    meta(property='og:url' content='https://srtk.me')
-    meta(property='og:title' content='Sarthak Mohanty')
-    meta(property='og:description' content='I\'m Sarthak Mohanty, a rising high school junior and a full-stack developer and designer.')
-    meta(property='og:image' content='https://cdn.glitch.com/52a09d93-774c-49a5-8883-9ac50e4c6dbf%2FSarthak%20Mohanty%2C%20Inc%20(1).png?v=1594723928537')
+extends layout
 
-    //if IE
-      link(rel='icon', href='favicon.ico')
-    title= title
-    link(rel='shortcut icon', href='https://sarthakmohanty.me/android-chrome-512x512.png')
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    script(src='/scripts/script.js')
-    script(src="https://kit.fontawesome.com/3573f6a0f9.js" crossorigin="anonymous")
-    link(href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap' rel='stylesheet')
-    link(rel='icon', type='image/png', sizes='32x32', href='favicon-32x32.png')
-    link(rel='icon', type='image/png', sizes='16x16', href='favicon-16x16.png')
-    link(rel='manifest', href='manifest.json')
-    meta(name='theme-color', content='#140D1A')
-    meta(name='apple-mobile-web-app-capable', content='yes')
-    meta(name='apple-mobile-web-app-status-bar-style', content='#140D1A')
-    meta(name='apple-mobile-web-app-title', content='Sarthak Mohanty')
-    link(rel='apple-touch-icon', href='apple-touch-icon-152x152.png')
-    link(rel='mask-icon', href='favicon.ico', color='#140D1A')
-    meta(name='msapplication-TileImage', content='msapplication-icon-144x144.png')
-    meta(name='msapplication-TileColor', content='#140D1A')
-  body
-    .morph
-      img(class="profilepic" src="https://cdn.glitch.com/52a09d93-774c-49a5-8883-9ac50e4c6dbf%2FE165F956-94C6-4454-AECB-49872A60CE47.png?v=1594727147930" width="400px" alt="profile picture")
-    div
-      h1 Howdy! 🤠 I'm #[a(href="mailto:hello@sarthakmohanty.me") Sarthak Mohanty].
-      br
-      h3 I'm 15 and I love developing random things and making them look #[em good].
-      br
-      h3 Technically, I'm a #[span.scolor Full Stack Web Developer 💻] and #[span.scolor Designer ✏️]. And I got some skills too:
-      br
-      button.skill Management
-      button.skill Research
-      button.skill Leadership
-      button.skill Active Communication
-      button.skill Problem Solver
-      button.skill Teamwork
-      button.skill Time Management
-      button.skill Teaching
-      button.skill Creativity
-      button.skill Photography
-      button.skill Copy & Social Media
-      button.skill Brand Strategy
-      button.skill Graphic Design
-      button.skill UI/UX Design
-      button.skill Product Design
-      button.skill Visual Design
-      button.skill Web Design
-      button.skill Web Development
-      button.skill User-Oriented Research and Design
-      br
-      p *not in any particular order
-      button.pill
-        a(target="_blank" rel="noreferrer noopener" href="https://sarthakmohanty.s3.amazonaws.com/Sarthak's+Resume.pdf") Résumé
-      button.pill
-        a(target="_blank" rel="noreferrer noopener" href="mailto:hello@sarthakmohanty.me") Hire Me!
-      button.pill
-        i.fab.fa-github(title='github icon' style='color: black; font-size: 15px;')
-        a(target="_blank" rel="noreferrer noopener" href="https://nerdstagram.com/sarthaktexas")  Github
-      br
-      br
-      br
-      h2 Currently, I&apos;m...
-      br
-      h3
-        | Attending 
-        a.scolor(target='_blank' rel="noreferrer noopener" href='http://nisd.net/brandeis') Louis D. Brandeis High School
-      h4
-        | I&apos;m a #[span.underline rising junior] trying my hardest to not try. I&apos;m also a honors student taking mostly AP classes. As a student on the STEM track, I focus my efforts on AP/DC Maths and Sciences.
-      h3
-        | Coleading the 
-        a.scolor(target='_blank' rel="noreferrer noopener" href='https://bit.ly/brandeisbowlz') Bowl Clubs
-      h4
-        | The Bowl Clubs collectively include #[em #[a(target='_blank' rel="noreferrer noopener" href='https://science.osti.gov/wdts/nsb') Science Bowl], #[a(target='_blank' rel="noreferrer noopener" href='http://nosb.org/') Ocean Bowl], and #[a(target='_blank' rel="noreferrer noopener" href='https://www.naqt.com/hs/') Quiz Bowl]]. Starting my second year of high school (11th grade), I was responsible for teaching incoming freshman and updating them of team practices and college-level science and math information. I curated presentations and custom textbooks to help them understand complex topics such as Calculus at an easy-to-learn level and help them understand AP Science subjects from a Pre-AP Science level. This took approximately 20 hours a week but drastically helped out team.
-      h3
-        | Attending 
-        a.scolor(target='_blank' rel="noreferrer noopener" href='https://www.alamo.edu/nvc/') Northwest Vista College
-      h4
-        | As a Dual Credit Student, I'm taking many courses doubly to earn both AP credit and state credit for college.
-      h3
-        | Volunteering at 
-        a.scolor(target='_blank' rel="noreferrer noopener" href='https://www.youthcodejam.org/') Youth Code Jam 
-        | as a Student Volunteer
-      h4
-        | I lead stations, workshops, and activities throughout the year during code jams around the greater San Antonio area. I have experience teaching STEM to K-12 and Higher Education.
-      h3
-        | A part of 
-        a.scolor(target='_blank' rel="noreferrer noopener" href='https://hackclub.com/') Hack Club
-      h4
-        | Just an active member in the community helping people when they need it. #[span.scolor Soon to be Executive Director of Brandeis Hack Club.]
-      h3
-        | Spreading education at #[span.scolor The Resource Bank] as Lead Developer and Subject Leader
-      h4
-        | I'm responsible for developing the websites and API's we use and also am a Subject Leader Tutor. We currently employ 23 tutors from my school to tutor students #[span.underline around the city] and help students with projects and homework. We instill important pillars of character such as timeliness and proactiveness to help students with college and the future ahead of them.
-      h3
-        | Marketing and Designing 
-        a.scolor(target='_blank' rel="noreferrer noopener" href='https://memorize.ai') memorize.ai
-      h4
-        | Currently working with a friend creating memorize.ai, a competitor to Quizlet and Anki with more #[span.underline modern student-centered features].
-      h3
-        | Working at 
-        a.scolor(target='_blank' rel="noreferrer noopener" href='https://redinkreview.com') Red Ink Review 
-        | as a Design and Marketing Intern
-      h4
-        | I'm responsible for managing social media and creating beautiful and responsive front-end experiences for college applicants everywhere.
-      h3
-        | Creating the next-generation of Hackathons at #[span.scolor Alamo City Hacks]
-      h4
-        | Inclusively creating the next-generation of South Texas Hackathons.
-      h3
-        | Engineering the future of social media at #[span.scolor Rapid App] as a Design Engineer
-      h4
-        | I have #[em 4] different positions here currently. 
-        | As an essential part of both the #[span.underline front-end and back-end team], I'm responsible for creating the user-facing web app to bring communities together more efficiently.
-        | As a part of #[span.underline Marketing Operations], I make content and ads for the main landing page and adverts. 
-        | And finally as a #[span.underline Design Engineer], I create User Interfaces that interact with wonderful user experiences to enhance the look and feel of the app. I also create brand guidelines and mockups for new features.
-      h2 Some things I&apos;ve done in the past...
-      br
-      h3
-        | Worked at 
-        a.scolor(target='_blank' rel="noreferrer noopener" href='https://fiveable.me/') Fiveable
-        |  as a Social Media Manager and Research Intern
-      h4.scolor May 2019 - August 2019 • 4 mos
-      h4
-        | I mainly did #[span.underline graphic design] and made marketing campaigns to promote to students. I also managed the 
-        a.scolor(target='_blank' rel="noreferrer noopener" href='https://instagram.com/thinkfiveable') main Instagram 
-        | and the other 
-        a.scolor(target='_blank' rel="noreferrer noopener" href='https://instagram.com/teachfiveable') Instagram 
-        | and made posts to target students and teachers.
-      h2 Projects I've worked on
-      br
-      h3 
-        a(target="_blank" rel="noreferrer noopener" href="") My Website 
-        span.badge.badge-info HTML
-        span.badge.badge-info CSS
-        span.badge.badge-info JS
-        span.badge.badge-info Node.js
-        span.badge.badge-info Express.js
-      h4
-        | What you're looking at right now. Made using Node.js and Express.js with a backend for some secret-stuff. Also, I've had #[em many] versions of this website, but sadly only kept 1 on my file drive.
-      h3 
-        a(target="_blank" rel="noreferrer noopener" href="/locate") Find Me 
-        span.badge.badge-info iCloud API
-        span.badge.badge-info JS
-        span.badge.badge-info Mapbox API
-        span.badge.badge-new New
-      h4
-        | Find me! It gets my phone's location through the Find My iPhone iCloud API and sends it to the Mapbox API which displays my current location.
-      h3 
-        a(target="_blank" rel="noreferrer noopener" href="") Task List 
-        span.badge.badge-info Todoist API
-        span.badge.badge-info JS
-        span.badge.badge-info JSON Array Manipulation
-        span.badge.badge-new New
-      h4
-        | LOTS of array manipulation. It gets my task list with priority, due date, and other cool data and displays it in task list form. Also shows completed tasks for about 5 minutes after completion with a nice animation.
-      h3
-        a(target="_blank" rel="noreferrer noopener" href="https://nerdstagram.com/sarthakmohantyinc/Opes") Resource Bank 
-        span.badge.badge-info HTML 
-        span.badge.badge-info CSS
-        span.badge.badge-info JS
-        span.badge.badge-info Node.js
-        span.badge.badge-info Express
-        span.badge.badge-info AWS
-      h4
-        | #[em Extremely] secured version of a membership website made for selling resources at my school.
-        | Made mainly with Node, Express, and AWS.
-      h3
-        a(target="_blank" rel="noreferrer noopener" href="cards.srtk.me") og-image Generator 
-        span.badge.badge-info HTML 
-        span.badge.badge-info CSS
-        span.badge.badge-info JS
-        span.badge.badge-info Typescript
-        span.badge.badge-new New
-      h4
-        | OpenGraph Card Generator adapted to fit my website.
-      h3
-        a(target="_blank" rel="noreferrer noopener" href="https://nerdstagram.com/sarthaktexas/kahootbot") Kahoot Hack Bot 
-        span.badge.badge-info Python
-      h4
-        | A bot to automagically answer Kahoot questions. Made when I was umm... young? So therefore it probably doesn't work anymore.
-      h3
-        a(target="_blank" rel="noreferrer noopener" href="https://sarthakmohanty.me/403") Quizlet Hack Chrome Extension 
-        span.badge.badge-info JS
-      h4
-        | A bot to automagically answer Quizlet Live questions. Made also when I was umm... young? So therefore it probably doesn't work anymore.
-      h3
-        a(target="_blank" rel="noreferrer noopener" href="https://sciencebowl.sarthakmohanty.me") Science Bowl Timer and Scorekeeper 
-        span.badge.badge-info HTML 
-        span.badge.badge-info CSS
-        span.badge.badge-info JS
-      h4
-        | Made so teachers and club leaders could easily track score and track time in a practice match without a hassle. This can be used in an actual match however.
-      h3
-        a(target="_blank" rel="noreferrer noopener" href="https://raw.githubusercontent.com/sarthaktexas/salamandarian/master/salamandarian.js") Salamandarian 
-        span.badge.badge-info JS
-      h4
-        | Salamandarian was made and used to do a poorly-executed Biology lab. We were supposed to go to random.com and roll dice and do math and count numbers, but that's hard. Just put this script into your browser and repeat for however many times you need it! This is teacher-ception.
-      h3
-        a(target="_blank" rel="noreferrer noopener" href="https://sarthakmohanty.s3.amazonaws.com/Brand+Colors.pdf") Brand Colors 
-        span.badge.badge-info Graphic Design
-        span.badge.badge-info Brand Design
-      h4 Brand Guidelines for Sarthak Mohanty and Sarthak Mohanty, Inc.
-      h3
-        a(target="_blank" rel="noreferrer noopener" href="https://fiveable.me") fiveable.me 
-        span.badge.badge-info Graphic Design
-        span.badge.badge-info Visual Design
-      h4
-        | I designed social media posts and stream thumbnails.
-      h3
-        a(target="_blank" rel="noreferrer noopener" href="https://nerdstagram.com/Standard-Structure/Standard-Structure") Standard-Structure/Standard-Structure 
-        span.badge.badge-info Gatsby
-      h4
-        | A (updated) repo of templates for many different languages and technologies. I added the Gatsby.js technology template.
-      h3
-        a(target="_blank" rel="noreferrer noopener" href="https://nerdstagram.com/renesansz/discord-greeter-bot") renesansz/discord-greeter-bot 
-        span.badge.badge-info Discord.js
-      h4
-        | A discord bot that responds pong when you say ping. Used to teach discord.js to students.
-      h3
-        a(target="_blank" rel="noreferrer noopener" href="https://nerdstagram.com/UndercoverGoose/quizlet") UndercoverGoose/quizlet 
-        span.badge.badge-info JS
-      h4
-        | Quizlet, Kahoot, and Gimkit hacks (yay!). Let's hope my teacher's don't stumble down here.
-      br
-      h2 Places where I'm mentioned:
-      br
-      h3
-        a(target="_blank" rel="noreferrer noopener" href="https://www.expressnews.com/news/education/article/San-Antonio-charter-school-team-is-National-13732518.php") San Antonio charter school team is National Science Bowl bound 
-        span.badge.badge-white 2019
-      h4 #[em San Antonio Middle School Regional Winner]
-      br
-      h2 Things I'm #[span.rainbow unusually] good at:
-      br
-      h3 Languages
-      br
-      button.skill 📃 HTML
-      button.skill 🖍️ CSS
-      button.skill 🏃 JS
-      button.skill ⌨️ TypeScript
-      button.skill 🍎 AppleScript
-      button.skill 🔨 Markdown
-      button.skill 🐍 Python
-      button.skill 🐦 Swift
-      button.skill 🔢 LaTeX
-      button.skill ⚙️ JSON
-      br
-      br
-      h3 Technologies / Tools
-      br
-      button.skill 🐶 Pug
-      button.skill 🍮 Jekyll
-      button.skill 🥾 Bootstrap
-      button.skill 🦕 Node.js
-      button.skill 🚅 Express.js
-      button.skill 🐱 Gatsby.js
-      button.skill 🐻 Discord.js
-      button.skill 🤖 Heroku
-      button.skill 🖥️ Amazon Web Services
-      button.skill ☁️ Cloudflare
-      button.skill 📊 Splunk
-      button.skill 📈 Grafana
-      button.skill 🛡️ Sentry
-      button.skill 💡 Vercel
-      button.skill 💳 Stripe
-      button.skill ✉️ Postman
-      button.skill 🔄 Git VCS
-      button.skill 🐱 Github
-      br
-      br
-      h3 Software
-      br
-      button.skill 📷 Adobe CC
-      button.skill 🧮 Wolfram
-      button.skill ✒️ Figma
-      button.skill 🌿 Overleaf
-      button.skill 🗂️ Notion
-      button.skill 🖊️ Canva
-      button.skill 🪑 Airtable
+block content
+  .morph
+    img(class="profilepic" src="https://cdn.glitch.com/52a09d93-774c-49a5-8883-9ac50e4c6dbf%2FE165F956-94C6-4454-AECB-49872A60CE47.png?v=1594727147930" width="400px" alt="profile picture")
+  div
+    h1 Howdy! 🤠 I'm #[a(href="mailto:hello@sarthakmohanty.me") Sarthak Mohanty].
+    br
+    h3 I'm 15 and I love developing random things and making them look #[em good].
+    br
+    h3 Technically, I'm a #[span.scolor Full Stack Web Developer 💻] and #[span.scolor Designer ✏️]. And I got some skills too:
+    br
+    button.skill Management
+    button.skill Research
+    button.skill Leadership
+    button.skill Active Communication
+    button.skill Problem Solver
+    button.skill Teamwork
+    button.skill Time Management
+    button.skill Teaching
+    button.skill Creativity
+    button.skill Photography
+    button.skill Copy & Social Media
+    button.skill Brand Strategy
+    button.skill Graphic Design
+    button.skill UI/UX Design
+    button.skill Product Design
+    button.skill Visual Design
+    button.skill Web Design
+    button.skill Web Development
+    button.skill User-Oriented Research and Design
+    br
+    p *not in any particular order
+    button.pill
+      a(target="_blank" rel="noreferrer noopener" href="https://sarthakmohanty.s3.amazonaws.com/Sarthak's+Resume.pdf") Résumé
+    button.pill
+      a(target="_blank" rel="noreferrer noopener" href="mailto:hello@sarthakmohanty.me") Hire Me!
+    button.pill
+      i.fab.fa-github(title='github icon' style='color: black; font-size: 15px;')
+      a(target="_blank" rel="noreferrer noopener" href="https://nerdstagram.com/sarthaktexas")  Github
+    br
+    br
+    br
+    h2 Currently, I&apos;m...
+    br
+    h3
+      | Attending 
+      a.scolor(target='_blank' rel="noreferrer noopener" href='http://nisd.net/brandeis') Louis D. Brandeis High School
+    h4
+      | I&apos;m a #[span.underline rising junior] trying my hardest to not try. I&apos;m also a honors student taking mostly AP classes. As a student on the STEM track, I focus my efforts on AP/DC Maths and Sciences.
+    h3
+      | Coleading the 
+      a.scolor(target='_blank' rel="noreferrer noopener" href='https://bit.ly/brandeisbowlz') Bowl Clubs
+    h4
+      | The Bowl Clubs collectively include #[em #[a(target='_blank' rel="noreferrer noopener" href='https://science.osti.gov/wdts/nsb') Science Bowl], #[a(target='_blank' rel="noreferrer noopener" href='http://nosb.org/') Ocean Bowl], and #[a(target='_blank' rel="noreferrer noopener" href='https://www.naqt.com/hs/') Quiz Bowl]]. Starting my second year of high school (11th grade), I was responsible for teaching incoming freshman and updating them of team practices and college-level science and math information. I curated presentations and custom textbooks to help them understand complex topics such as Calculus at an easy-to-learn level and help them understand AP Science subjects from a Pre-AP Science level. This took approximately 20 hours a week but drastically helped out team.
+    h3
+      | Attending 
+      a.scolor(target='_blank' rel="noreferrer noopener" href='https://www.alamo.edu/nvc/') Northwest Vista College
+    h4
+      | As a Dual Credit Student, I'm taking many courses doubly to earn both AP credit and state credit for college.
+    h3
+      | Volunteering at 
+      a.scolor(target='_blank' rel="noreferrer noopener" href='https://www.youthcodejam.org/') Youth Code Jam 
+      | as a Student Volunteer
+    h4
+      | I lead stations, workshops, and activities throughout the year during code jams around the greater San Antonio area. I have experience teaching STEM to K-12 and Higher Education.
+    h3
+      | A part of 
+      a.scolor(target='_blank' rel="noreferrer noopener" href='https://hackclub.com/') Hack Club
+    h4
+      | Just an active member in the community helping people when they need it. #[span.scolor Soon to be Executive Director of Brandeis Hack Club.]
+    h3
+      | Spreading education at #[span.scolor The Resource Bank] as Lead Developer and Subject Leader
+    h4
+      | I'm responsible for developing the websites and API's we use and also am a Subject Leader Tutor. We currently employ 23 tutors from my school to tutor students #[span.underline around the city] and help students with projects and homework. We instill important pillars of character such as timeliness and proactiveness to help students with college and the future ahead of them.
+    h3
+      | Marketing and Designing 
+      a.scolor(target='_blank' rel="noreferrer noopener" href='https://memorize.ai') memorize.ai
+    h4
+      | Currently working with a friend creating memorize.ai, a competitor to Quizlet and Anki with more #[span.underline modern student-centered features].
+    h3
+      | Working at 
+      a.scolor(target='_blank' rel="noreferrer noopener" href='https://redinkreview.com') Red Ink Review 
+      | as a Design and Marketing Intern
+    h4
+      | I'm responsible for managing social media and creating beautiful and responsive front-end experiences for college applicants everywhere.
+    h3
+      | Creating the next-generation of Hackathons at #[span.scolor Alamo City Hacks]
+    h4
+      | #[span.underline Inclusively creating] the next-generation of South Texas Hackathons.
+    h3
+      | Engineering the future of social media at #[span.scolor Rapid App] as a Design Engineer
+    h4
+      | I have #[em 4] different positions here currently. 
+      | As an essential part of both the #[span.underline front-end and back-end team], I'm responsible for creating the user-facing web app to bring communities together more efficiently.
+      | As a part of #[span.underline Marketing Operations], I make content and ads for the main landing page and adverts. 
+      | And finally as a #[span.underline Design Engineer], I create User Interfaces that interact with wonderful user experiences to enhance the look and feel of the app. I also create brand guidelines and mockups for new features.
+    h2 Some things I&apos;ve done in the past...
+    br
+    h3
+      | Worked at 
+      a.scolor(target='_blank' rel="noreferrer noopener" href='https://fiveable.me/') Fiveable
+      |  as a Social Media Manager and Research Intern
+    h4.scolor May 2019 - August 2019 • 4 mos
+    h4
+      | I mainly did #[span.underline graphic design] and made marketing campaigns to promote to students. I also managed the 
+      a.scolor(target='_blank' rel="noreferrer noopener" href='https://instagram.com/thinkfiveable') main Instagram 
+      | and the other 
+      a.scolor(target='_blank' rel="noreferrer noopener" href='https://instagram.com/teachfiveable') Instagram 
+      | and made posts to target students and teachers.
+    h2 Projects I've worked on
+    br
+    h3 
+      a(target="_blank" rel="noreferrer noopener" href="") My Website 
+      span.badge.badge-info HTML
+      span.badge.badge-info CSS
+      span.badge.badge-info JS
+      span.badge.badge-info Node.js
+      span.badge.badge-info Express.js
+    h4
+      | What you're looking at right now. Made using Node.js and Express.js with a backend for some secret-stuff. Also, I've had #[em many] versions of this website, but sadly only kept 1 on my file drive.
+    h3 
+      a(target="_blank" rel="noreferrer noopener" href="/locate") Find Me 
+      span.badge.badge-info iCloud API
+      span.badge.badge-info JS
+      span.badge.badge-info Mapbox API
+      span.badge.badge-new New
+    h4
+      | Find me! It gets my phone's location through the Find My iPhone iCloud API and sends it to the Mapbox API which displays my current location.
+    h3 
+      a(target="_blank" rel="noreferrer noopener" href="") Task List 
+      span.badge.badge-info Todoist API
+      span.badge.badge-info JS
+      span.badge.badge-info JSON Array Manipulation
+      span.badge.badge-new New
+    h4
+      | LOTS of array manipulation. It gets my task list with priority, due date, and other cool data and displays it in task list form. Also shows completed tasks for about 5 minutes after completion with a nice animation.
+    h3
+      a(target="_blank" rel="noreferrer noopener" href="https://nerdstagram.com/sarthakmohantyinc/Opes") Resource Bank 
+      span.badge.badge-info HTML 
+      span.badge.badge-info CSS
+      span.badge.badge-info JS
+      span.badge.badge-info Node.js
+      span.badge.badge-info Express
+      span.badge.badge-info AWS
+    h4
+      | #[em Extremely] secured version of a membership website made for selling resources at my school.
+      | Made mainly with Node, Express, and AWS.
+    h3
+      a(target="_blank" rel="noreferrer noopener" href="cards.srtk.me") og-image Generator 
+      span.badge.badge-info HTML 
+      span.badge.badge-info CSS
+      span.badge.badge-info JS
+      span.badge.badge-info Typescript
+      span.badge.badge-new New
+    h4
+      | OpenGraph Card Generator adapted to fit my website.
+    h3
+      a(target="_blank" rel="noreferrer noopener" href="https://nerdstagram.com/sarthaktexas/kahootbot") Kahoot Hack Bot 
+      span.badge.badge-info Python
+    h4
+      | A bot to automagically answer Kahoot questions. Made when I was umm... young? So therefore it probably doesn't work anymore.
+    h3
+      a(target="_blank" rel="noreferrer noopener" href="https://sarthakmohanty.me/403") Quizlet Hack Chrome Extension 
+      span.badge.badge-info JS
+    h4
+      | A bot to automagically answer Quizlet Live questions. Made also when I was umm... young? So therefore it probably doesn't work anymore.
+    h3
+      a(target="_blank" rel="noreferrer noopener" href="https://sciencebowl.sarthakmohanty.me") Science Bowl Timer and Scorekeeper 
+      span.badge.badge-info HTML 
+      span.badge.badge-info CSS
+      span.badge.badge-info JS
+    h4
+      | Made so teachers and club leaders could easily track score and track time in a practice match without a hassle. This can be used in an actual match however.
+    h3
+      a(target="_blank" rel="noreferrer noopener" href="https://raw.githubusercontent.com/sarthaktexas/salamandarian/master/salamandarian.js") Salamandarian 
+      span.badge.badge-info JS
+    h4
+      | Salamandarian was made and used to do a poorly-executed Biology lab. We were supposed to go to random.com and roll dice and do math and count numbers, but that's hard. Just put this script into your browser and repeat for however many times you need it! This is teacher-ception.
+    h3
+      a(target="_blank" rel="noreferrer noopener" href="https://sarthakmohanty.s3.amazonaws.com/Brand+Colors.pdf") Brand Colors 
+      span.badge.badge-info Graphic Design
+      span.badge.badge-info Brand Design
+    h4 Brand Guidelines for Sarthak Mohanty and Sarthak Mohanty, Inc.
+    h3
+      a(target="_blank" rel="noreferrer noopener" href="https://fiveable.me") fiveable.me 
+      span.badge.badge-info Graphic Design
+      span.badge.badge-info Visual Design
+    h4
+      | I designed social media posts and stream thumbnails.
+    h3
+      a(target="_blank" rel="noreferrer noopener" href="https://nerdstagram.com/Standard-Structure/Standard-Structure") Standard-Structure/Standard-Structure 
+      span.badge.badge-info Gatsby
+    h4
+      | A (updated) repo of templates for many different languages and technologies. I added the Gatsby.js technology template.
+    h3
+      a(target="_blank" rel="noreferrer noopener" href="https://nerdstagram.com/renesansz/discord-greeter-bot") renesansz/discord-greeter-bot 
+      span.badge.badge-info Discord.js
+    h4
+      | A discord bot that responds pong when you say ping. Used to teach discord.js to students.
+    h3
+      a(target="_blank" rel="noreferrer noopener" href="https://nerdstagram.com/UndercoverGoose/quizlet") UndercoverGoose/quizlet 
+      span.badge.badge-info JS
+    h4
+      | Quizlet, Kahoot, and Gimkit hacks (yay!). Let's hope my teacher's don't stumble down here.
+    br
+    h2 Places where I'm mentioned:
+    br
+    h3
+      a(target="_blank" rel="noreferrer noopener" href="https://www.expressnews.com/news/education/article/San-Antonio-charter-school-team-is-National-13732518.php") San Antonio charter school team is National Science Bowl bound 
+      span.badge.badge-white 2019
+    h4 #[em San Antonio Middle School Regional Winner]
+    br
+    h2 Things I'm #[span.rainbow unusually] good at:
+    br
+    h3 Languages
+    br
+    button.skill 📃 HTML
+    button.skill 🖍️ CSS
+    button.skill 🏃 JS
+    button.skill ⌨️ TypeScript
+    button.skill 🍎 AppleScript
+    button.skill 🔨 Markdown
+    button.skill 🐍 Python
+    button.skill 🐦 Swift
+    button.skill 🔢 LaTeX
+    button.skill ⚙️ JSON
+    br
+    br
+    h3 Technologies / Tools
+    br
+    button.skill 🐶 Pug
+    button.skill 🍮 Jekyll
+    button.skill 🥾 Bootstrap
+    button.skill 🦕 Node.js
+    button.skill 🚅 Express.js
+    button.skill 🐱 Gatsby.js
+    button.skill 🐻 Discord.js
+    button.skill 🤖 Heroku
+    button.skill 🖥️ Amazon Web Services
+    button.skill ☁️ Cloudflare
+    button.skill 📊 Splunk
+    button.skill 📈 Grafana
+    button.skill 🛡️ Sentry
+    button.skill 💡 Vercel
+    button.skill 💳 Stripe
+    button.skill ✉️ Postman
+    button.skill 🔄 Git VCS
+    button.skill 🐱 Github
+    br
+    br
+    h3 Software
+    br
+    button.skill 📷 Adobe CC
+    button.skill 🧮 Wolfram
+    button.skill ✒️ Figma
+    button.skill 🌿 Overleaf
+    button.skill 🗂️ Notion
+    button.skill 🖊️ Canva
+    button.skill 🪑 Airtable
   footer
     .center
       p "I help #[span.strike grown-ups who lost their imagination] make stuff look cool."
