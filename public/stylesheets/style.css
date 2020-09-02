@@ -25,6 +25,14 @@
   background: transparent;
 }
 
+.badge::selection {
+  background: transparent;
+}
+
+.badge::-moz-selection {
+  background: transparent;
+}
+
 div {
   border-radius: 25%;
   max-width: 40rem;
@@ -496,6 +504,17 @@ and (orientation: landscape) {
 .badge-error {
   color: black;
   background-color: red;
+}
+
+.badge-pinkgradient {
+  color: black;
+  background-image: url(https://www.creativefabrica.com/wp-content/uploads/2020/03/08/Gradient-Rainbow-Background-Graphics-3304110-1-1-580x387.jpg);
+}
+
+.badge-bluegradient {
+  color: black;
+  background-image: url(https://www.creativefabrica.com/wp-content/uploads/2020/03/08/Gradient-Rainbow-Background-Graphics-3304110-1-1-580x387.jpg);
+  background-position: 25% 75%;
 }
 
 .error {
