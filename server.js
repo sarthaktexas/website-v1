@@ -1,3 +1,4 @@
+require('dotenv').config()
 var express = require("express");
 var app = express();
 const Todoist = require("todoist").v8;
@@ -129,6 +130,6 @@ app.use(function (req, res) {
 });
 
 // listen for requests :)
-const listener = app.listen(process.env.PORT, () => {
+const listener = app.listen(process.env.PORT || 3000, () => {
   console.log("Your app is listening on port " + listener.address().port);
 });

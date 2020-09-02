@@ -443,7 +443,7 @@ and (orientation: landscape) {
 }
 
 @keyframes rainbow{
-    0%{color: orange;}	
+  0%{color: orange;}	
   10%{color: purple;}	
 	20%{color: red;}
   30%{color: CadetBlue;}
@@ -491,6 +491,11 @@ and (orientation: landscape) {
 .badge-new {
     color: black;
     background-color: #01FDF6;
+}
+
+.badge-error {
+  color: black;
+  background-color: red;
 }
 
 .error {
