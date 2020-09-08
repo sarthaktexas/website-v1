@@ -5,6 +5,7 @@ block content
     h1.huge.rainbow 404
     br
     h2 Not Found.
+    p#errorMessage
   footer
   .center
     p "I make really cool pictures, but then I let some people ruin them if they give me money."
@@ -30,3 +31,6 @@ block content
         i.fab.fa-instagram(title='instagram icon')
       a(class='spotify' target='_blank' rel="noreferrer noopener" href='https://open.spotify.com/user/sarthak_m')
         i.fab.fa-spotify(title='spotify icon')
+    script.
+      const errorMessage = new URLSearchParams(window.location.search).get("m");
+      document.getElementById("errorMessage").textContent = errorMessage;
