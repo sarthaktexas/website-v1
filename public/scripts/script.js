@@ -1,5 +1,5 @@
 console.log(`%c __________________________________________________________
-| Available for freelance work - hello@sarthakmohanty.com |
+| Available for freelance work - hello@sarthakmohanty.me |
  ----------------------------------------------------------
         \\   ^__^
          \\  (oo)\\_______
