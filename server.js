@@ -3,6 +3,7 @@ var express = require("express");
 var app = express();
 const Todoist = require("todoist").v8;
 const todoist = Todoist(process.env.TODOIST_API_KEY);
+const ical = require('node-ical');
 var iCloud = require("apple-icloud");
 var session = {};
 var username = process.env.ICLOUD_USERNAME;
@@ -123,6 +124,45 @@ app.get("/about", function (req, res) {
   res.redirect(
     "https://www.notion.so/Directory-Of-Sarthak-8feff445502242ce9cf106795364b360"
   );
+});
+
+app.get("/calendar", async function (req, res) {
+  var url = "https://nisd.schoology.com/calendar/feed/ical/1597685589/4e417e488e34706baae4e06f13694c47/ical.ics";
+  let body = "<h1>Updated with the following:</h1>";
+  ical.fromURL(url, {}, async function (err, events) {
+    if (err) {
+      console.log(err);
+    }
+    const date = new Date;
+    for (const event in events) {
+      var ev = events[event];
+      if (ev.start.getDate() === date.getDate() - 1 || ev.start.getDate() === date.getDate()) {
+        await todoist.sync();
+        const homeworkList = todoist.items.get();
+        if (homeworkList.filter(homework => homework.content === ev.summary).length) {
+          console.log(`${ev.summary} exists`);
+          body += `<br/>${ev.summary} exists<br/>`;
+        } else {
+          console.log(`${ev.summary} does not exist, so I'll go ahead and add it for you :)`);
+          body += `<br/>${ev.summary} does not exist, so I'll go ahead and add it for you :)`;
+          await todoist.items.add({
+            content: ev.summary,
+            due: {
+              string: ev.start.toDateString()
+            }
+          }).then((tdRes) => {
+            console.log(`${tdRes.content} was created!`);
+            body += `<br/><strong>${tdRes.content} was created!</strong><br/>`;
+          }).catch((err) => {
+            console.log(err);
+            body += err;
+          });
+        }
+      }
+    }
+  });
+  await new Promise(resolve => setTimeout(resolve, 7000));
+  res.send(body);
 });
 
 app.use(function (req, res) {
