@@ -38,7 +38,7 @@ block content
               li
                 | #{task.task} 
                 strong #{task.date} 
-                | #[span.badge.badge-info #{task.priority}]
+                | #[span.badge.badge-empty #{task.priority}]
                 if task.recurring
                   | 🔁
           else

@@ -486,6 +486,12 @@ and (orientation: landscape) {
     background-color: #FF5757;
 }
 
+.badge-empty {
+  color: white;
+  background: transparent;
+  border: 1px solid white;
+}
+
 .badge-scolor {
     color: #140D1A;
     background-color: #FF5757;
