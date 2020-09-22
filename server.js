@@ -134,7 +134,7 @@ app.get("/calendar", async function (req, res) {
       console.log(err);
     }
     const date = new Date;
-    body += `2: ${date.toLocaleString('en-US', { timeZone: 'America/Chicago' }).toDateString()}`;
+    body += `2: ${date.toLocaleString('en-US', { timeZone: 'America/Chicago' })}`;
     for (const event in events) {
       var ev = events[event];
       if (ev.start.getDate() === date.getDate() - 1 || ev.start.getDate() === date.getDate()) {
@@ -150,7 +150,7 @@ app.get("/calendar", async function (req, res) {
           await todoist.items.add({
             content: ev.summary,
             due: {
-              string: ev.end.toLocaleString('en-US', { timeZone: 'America/Chicago' }).toDateString()
+              string: ev.end.toLocaleDateString('en-US', { timeZone: 'America/Chicago' })
             }
           }).then((tdRes) => {
             console.log(`${tdRes.content} was created!`);
