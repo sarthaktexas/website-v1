@@ -146,14 +146,17 @@ app.post("/calendar", async function (req, res) {
           await todoist.sync();
           const homeworkList = todoist.items.get();
           if (homeworkList.filter(homework => homework.content === ev.summary).length) {
+            // If Todoist contains the schoology event, log "exists" and push it to res.send(body)
             console.log(`${ev.summary} exists`);
             body += `<br/>${ev.summary} exists<br/>`;
           } else {
+            // If it doesn't, then create it!
             console.log(`${ev.summary} does not exist, so I'll go ahead and add it for you :)`);
             body += `<br/>${ev.summary} does not exist, so I'll go ahead and add it for you :)`;
             await todoist.items.add({
               content: ev.summary,
               due: {
+                // Change UTC -> CDT
                 string: ev.end.toLocaleDateString('en-US', { timeZone: 'America/Chicago' })
               }
             }).then((tdRes) => {
@@ -171,11 +174,13 @@ app.post("/calendar", async function (req, res) {
     await new Promise(resolve => setTimeout(resolve, 7000));
     res.send(body);
   } else if (req.body.token && !req.body.url) {
+    // If iCal URL is missing, do this:
     res.send({
       error: "401",
       message: "Missing Schoology iCal URL. Get it in your User Settings."
     });
   } else if (req.body.url && !req.body.token) {
+    // If Todoist API Token is missing, do this:
     res.send({
       error: "401",
       message: "Missing Todoist API Key. Get it in your User Settings."
