@@ -130,6 +130,7 @@ app.get("/about", function (req, res) {
 });
 
 app.post("/calendar", async function (req, res) {
+  console.log(body);
   if (req.body.token && req.body.url) {
     const todoist = Todoist(req.body.token);
     var url = req.body.url;
