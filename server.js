@@ -129,70 +129,72 @@ app.post("/calendar", async function (req, res) {
   if (req.body.token && req.body.url) {
     let todoist;
     try {
+      // Try using the API Token, if it works, proceed, otherwise, go to the catch block
       todoist = Todoist(req.body.token);
+      let url;
+      if (req.body.url.includes('webcal://')) {
+        // If body contains "webcal://"
+        url = req.body.url.replace(/webcal:\/\//g, 'https://');
+      } else if (req.body.url.includes('https://')) {
+        // If body contains "https://"
+        url = req.body.url;
+      } else {
+        // If body is incorrectly formatted
+        res.send({
+          error: "400",
+          message: "Your iCal URL is incorrect or unsecure. Make sure it starts with either https:// or webcal://. HTTP is NOT supported. Please use HTTPS."
+        });
+      }
+      let body = "<h1>Updated with the following:</h1>";
+      ical.fromURL(url, {}, async function (err, events) {
+        if (err) {
+          console.log(err);
+        }
+        const date = new Date;
+        for (const event in events) {
+          // Loop throught every event in the events array and call each one "event"
+          var ev = events[event];
+          // If the date is equal to yesterday's date, or the date is equal to today's date:
+          if (ev.start.getDate() === date.getDate() - 1 || ev.start.getDate() === date.getDate()) {
+            await todoist.sync();
+            const homeworkList = todoist.items.get();
+            if (homeworkList.filter(homework => homework.content === ev.summary).length) {
+              // If Todoist contains the schoology event, log "exists" and push it to res.send(body)
+              console.log(`${ev.summary} exists`);
+              body += `<br/>${ev.summary} exists<br/>`;
+            } else {
+              // If it doesn't, then create it!
+              console.log(`${ev.summary} does not exist, so I'll go ahead and add it for you :)`);
+              body += `<br/>${ev.summary} does not exist, so I'll go ahead and add it for you :)`;
+              await todoist.items.add({
+                content: ev.summary,
+                due: {
+                  // Change UTC -> CDT
+                  string: ev.end.toLocaleDateString('en-US', {
+                    timeZone: 'America/Chicago'
+                  })
+                }
+              }).then((tdRes) => {
+                // tdRes should be todoistResponse
+                console.log(`${tdRes.content} was created!`);
+                body += `<br/><strong>${tdRes.content} was created!</strong><br/>`;
+              }).catch((err) => {
+                console.log(err);
+                body += err;
+              });
+            }
+          }
+        }
+      });
+      await new Promise(resolve => setTimeout(resolve, 7000));
+      res.send(body);
     } catch {
+      // This is what's run if the Todoist API token is invalid.
       res.send({
         error: "401",
         message: "Your Todoist API Token is invalid. Make sure it's correct by verifying it in User Settings."
       });
     }
-    let url;
-    if (req.body.url.includes('webcal://')) {
-      // If body contains "webcal://"
-      url = req.body.url.replace(/webcal:\/\//g, 'https://');
-    } else if (req.body.url.includes('https://')) {
-      // If body contains "https://"
-      url = req.body.url;
-    } else {
-      // If body is incorrectly formatted
-      res.send({
-        error: "400",
-        message: "Your iCal URL is incorrect or unsecure. Make sure it starts with either https:// or webcal://. HTTP is NOT supported. Please use HTTPS."
-      });
-    }
-    let body = "<h1>Updated with the following:</h1>";
-    ical.fromURL(url, {}, async function (err, events) {
-      if (err) {
-        console.log(err);
-      }
-      const date = new Date;
-      for (const event in events) {
-        // Loop throught every event in the events array and call each one "event"
-        var ev = events[event];
-        // If the date is equal to yesterday's date, or the date is equal to today's date:
-        if (ev.start.getDate() === date.getDate() - 1 || ev.start.getDate() === date.getDate()) {
-          await todoist.sync();
-          const homeworkList = todoist.items.get();
-          if (homeworkList.filter(homework => homework.content === ev.summary).length) {
-            // If Todoist contains the schoology event, log "exists" and push it to res.send(body)
-            console.log(`${ev.summary} exists`);
-            body += `<br/>${ev.summary} exists<br/>`;
-          } else {
-            // If it doesn't, then create it!
-            console.log(`${ev.summary} does not exist, so I'll go ahead and add it for you :)`);
-            body += `<br/>${ev.summary} does not exist, so I'll go ahead and add it for you :)`;
-            await todoist.items.add({
-              content: ev.summary,
-              due: {
-                // Change UTC -> CDT
-                string: ev.end.toLocaleDateString('en-US', {
-                  timeZone: 'America/Chicago'
-                })
-              }
-            }).then((tdRes) => {
-              // tdRes should be todoistResponse
-              console.log(`${tdRes.content} was created!`);
-              body += `<br/><strong>${tdRes.content} was created!</strong><br/>`;
-            }).catch((err) => {
-              console.log(err);
-              body += err;
-            });
-          }
-        }
-      }
-    });
-    await new Promise(resolve => setTimeout(resolve, 7000));
-    res.send(body);
   } else if (req.body.token && !req.body.url) {
     // If iCal URL is missing, do this:
     res.send({
