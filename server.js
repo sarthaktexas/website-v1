@@ -124,10 +124,22 @@ app.get("/about", function (req, res) {
 });
 
 app.post("/calendar", async function (req, res) {
-  console.log(req.body);
   if (req.body.token && req.body.url) {
     const todoist = Todoist(req.body.token);
-    var url = req.body.url;
+    let url;
+    if (req.body.url.includes('webcal://')) {
+      // If body contains "webcal://"
+      url = req.body.url.replace(/webcal:\/\//g, 'https://');
+    } else if (req.body.url.includes('https://')) {
+      // If body contains "https://"
+      url = req.body.url;
+    } else {
+      // If body is incorrectly formatted
+      res.send({
+        error: "400",
+        message: "Your iCal URL is incorrect. Make sure it starts with either https:// or webcal://."
+      });
+    }
     let body = "<h1>Updated with the following:</h1>";
     ical.fromURL(url, {}, async function (err, events) {
       if (err) {
@@ -135,6 +147,7 @@ app.post("/calendar", async function (req, res) {
       }
       const date = new Date;
       for (const event in events) {
+        // Loop throught every event in the events array and call each one "event"
         var ev = events[event];
         // If the date is equal to yesterday's date, or the date is equal to today's date:
         if (ev.start.getDate() === date.getDate() - 1 || ev.start.getDate() === date.getDate()) {
