@@ -2,16 +2,18 @@ require('dotenv').config()
 var express = require("express");
 var app = express();
 const Todoist = require("todoist").v8;
-const todoist = Todoist(process.env.TODOIST_API_KEY);
 const ical = require('node-ical');
 var iCloud = require("apple-icloud");
 var session = {};
 var username = process.env.ICLOUD_USERNAME;
 var password = process.env.ICLOUD_PASSWORD;
+var bodyParser = require('body-parser')
 
 app.use(express.static("public"));
 
 app.set("view engine", "pug");
+
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", function (req, res) {
   res.render("index", {
@@ -25,6 +27,7 @@ app.get("/contact", function (req, res) {
 
 app.get("/tasks", async function (req, res) {
   try {
+    const todoist = Todoist(process.env.TODOIST_API_KEY);
     // get todoist api
     await todoist.sync();
     // get to do list array
@@ -126,44 +129,58 @@ app.get("/about", function (req, res) {
   );
 });
 
-app.get("/calendar", async function (req, res) {
-  var url = "https://nisd.schoology.com/calendar/feed/ical/1597685589/4e417e488e34706baae4e06f13694c47/ical.ics";
-  let body = "<h1>Updated with the following:</h1>";
-  ical.fromURL(url, {}, async function (err, events) {
-    if (err) {
-      console.log(err);
-    }
-    const date = new Date;
-    for (const event in events) {
-      var ev = events[event];
-      if (ev.start.getDate() === date.getDate() - 1 || ev.start.getDate() === date.getDate()) {
-        await todoist.sync();
-        const homeworkList = todoist.items.get();
-        if (homeworkList.filter(homework => homework.content === ev.summary).length) {
-          console.log(`${ev.summary} exists`);
-          body += `<br/>${ev.summary} exists<br/>`;
-        } else {
-          console.log(`${ev.summary} does not exist, so I'll go ahead and add it for you :)`);
-          body += `<br/>${ev.summary} does not exist, so I'll go ahead and add it for you :)`;
-          await todoist.items.add({
-            content: ev.summary,
-            due: {
-              string: ev.end.toLocaleDateString('en-US', { timeZone: 'America/Chicago' })
-            }
-          }).then((tdRes) => {
-            // tdRes should be todoistResponse
-            console.log(`${tdRes.content} was created!`);
-            body += `<br/><strong>${tdRes.content} was created!</strong><br/>`;
-          }).catch((err) => {
-            console.log(err);
-            body += err;
-          });
+app.post("/calendar", async function (req, res) {
+  if (req.body.token && req.body.url) {
+    const todoist = Todoist(req.body.token);
+    var url = req.body.url;
+    let body = "<h1>Updated with the following:</h1>";
+    ical.fromURL(url, {}, async function (err, events) {
+      if (err) {
+        console.log(err);
+      }
+      const date = new Date;
+      for (const event in events) {
+        var ev = events[event];
+        // If the date is equal to yesterday's date, or the date is equal to today's date:
+        if (ev.start.getDate() === date.getDate() - 1 || ev.start.getDate() === date.getDate()) {
+          await todoist.sync();
+          const homeworkList = todoist.items.get();
+          if (homeworkList.filter(homework => homework.content === ev.summary).length) {
+            console.log(`${ev.summary} exists`);
+            body += `<br/>${ev.summary} exists<br/>`;
+          } else {
+            console.log(`${ev.summary} does not exist, so I'll go ahead and add it for you :)`);
+            body += `<br/>${ev.summary} does not exist, so I'll go ahead and add it for you :)`;
+            await todoist.items.add({
+              content: ev.summary,
+              due: {
+                string: ev.end.toLocaleDateString('en-US', { timeZone: 'America/Chicago' })
+              }
+            }).then((tdRes) => {
+              // tdRes should be todoistResponse
+              console.log(`${tdRes.content} was created!`);
+              body += `<br/><strong>${tdRes.content} was created!</strong><br/>`;
+            }).catch((err) => {
+              console.log(err);
+              body += err;
+            });
+          }
         }
       }
-    }
-  });
-  await new Promise(resolve => setTimeout(resolve, 7000));
-  res.send(body);
+    });
+    await new Promise(resolve => setTimeout(resolve, 7000));
+    res.send(body);
+  } else if (req.body.token && !req.body.url) {
+    res.send({
+      error: "401",
+      message: "Missing Schoology iCal URL. Get it in your User Settings."
+    });
+  } else if (req.body.url && !req.body.token) {
+    res.send({
+      error: "401",
+      message: "Missing Todoist API Key. Get it in your User Settings."
+    });
+  }
 });
 
 app.use(function (req, res) {
