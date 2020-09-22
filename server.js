@@ -185,6 +185,12 @@ app.post("/calendar", async function (req, res) {
       error: "401",
       message: "Missing Todoist API Key. Get it in your User Settings."
     });
+  } else if (!req.body.url && !req.body.token) {
+    // If both are missing, then do this:
+    res.send({
+      error: "401",
+      message: "Missing both Schoology iCal URL & Todoist API Key. Get both in your User Settings in respective apps."
+    });
   }
 });
 
