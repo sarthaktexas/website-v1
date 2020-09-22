@@ -126,6 +126,13 @@ app.get("/about", function (req, res) {
 app.post("/calendar", async function (req, res) {
   if (req.body.token && req.body.url) {
     const todoist = Todoist(req.body.token);
+    todoist.catch((err) => {
+      console.log(err);
+      res.send({
+        error: "401",
+        message: "Your Todoist API Token is invalid. Make sure it's correct by verifying it in User Settings."
+      });
+    });
     let url;
     if (req.body.url.includes('webcal://')) {
       // If body contains "webcal://"
