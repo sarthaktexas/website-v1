@@ -134,8 +134,7 @@ app.get("/calendar", async function (req, res) {
       console.log(err);
     }
     const date = new Date;
-    body += `1: ${date}`
-    body += `2: ${date.toLocaleString('en-US', { timeZone: 'America/Chicago' }).toDateString()}`
+    body += `2: ${date.toLocaleString('en-US', { timeZone: 'America/Chicago' }).toDateString()}`;
     for (const event in events) {
       var ev = events[event];
       if (ev.start.getDate() === date.getDate() - 1 || ev.start.getDate() === date.getDate()) {
@@ -147,7 +146,7 @@ app.get("/calendar", async function (req, res) {
         } else {
           console.log(`${ev.summary} does not exist, so I'll go ahead and add it for you :)`);
           body += `<br/>${ev.summary} does not exist, so I'll go ahead and add it for you :)`;
-          body += `<br/>3: ${ev.start}<br/>4: ${ev.end}<br/>`
+          body += `<br/>3: ${ev.start}<br/>4: ${ev.end}<br/>`;
           await todoist.items.add({
             content: ev.summary,
             due: {
