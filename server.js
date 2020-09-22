@@ -123,12 +123,6 @@ app.get("/about", function (req, res) {
   );
 });
 
-app.get("/about", function (req, res) {
-  res.redirect(
-    "https://www.notion.so/Directory-Of-Sarthak-8feff445502242ce9cf106795364b360"
-  );
-});
-
 app.post("/calendar", async function (req, res) {
   console.log(body);
   if (req.body.token && req.body.url) {
