@@ -192,12 +192,6 @@ app.post("/calendar", async function (req, res) {
           }
         }
       }
-    }).catch((err) => {
-      console.log(err);
-      res.send({
-        error: "400",
-        message: "Your iCal URL is incorrect. Make sure it matches your Schoology URL in your User Settings."
-      });
     });
     await new Promise(resolve => setTimeout(resolve, 7000));
     res.send(body);
