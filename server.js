@@ -127,10 +127,9 @@ app.get("/about", function (req, res) {
 
 app.post("/calendar", async function (req, res) {
   if (req.body.token && req.body.url) {
-    let todoist;
+    const todoist = Todoist(req.body.token);
     try {
       // Try using the API Token, if it works, proceed, otherwise, go to the catch block
-      todoist = Todoist(req.body.token);
       await todoist.sync();
     } catch {
       // This is what's run if the Todoist API token is invalid.
