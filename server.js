@@ -132,6 +132,13 @@ app.post("/calendar", async function (req, res) {
       // Try using the API Token, if it works, proceed, otherwise, go to the catch block
       todoist = Todoist(req.body.token);
       await todoist.sync();
+    } catch {
+      // This is what's run if the Todoist API token is invalid.
+      res.send({
+        error: "401",
+        message: "Your Todoist API Token is invalid. Make sure it's correct by verifying it in User Settings."
+      });
+    }
       let url;
       if (req.body.url.includes('webcal://')) {
         // If body contains "webcal://"
@@ -195,13 +202,6 @@ app.post("/calendar", async function (req, res) {
       });
       await new Promise(resolve => setTimeout(resolve, 7000));
       res.send(body);
-    } catch {
-      // This is what's run if the Todoist API token is invalid.
-      res.send({
-        error: "401",
-        message: "Your Todoist API Token is invalid. Make sure it's correct by verifying it in User Settings."
-      });
-    }
   } else if (req.body.token && !req.body.url) {
     // If iCal URL is missing, do this:
     res.send({
