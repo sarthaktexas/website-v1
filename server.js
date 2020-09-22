@@ -131,11 +131,12 @@ app.post("/calendar", async function (req, res) {
       var a = parseInt(h, 16);
       return (a.toString(16) === h.toLowerCase())
     }
-    if (req.body.token.length !== 64 && !isHex(req.body.token)) {
+    if (req.body.token.length !== 40 && !isHex(req.body.token)) {
       res.send({
         error: "401",
         message: "Your Todoist API Token is invalid. Make sure it's correct by verifying it in User Settings."
       });
+      return;
     }
     const todoist = Todoist(req.body.token);
     let url;
