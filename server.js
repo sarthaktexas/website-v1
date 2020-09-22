@@ -95,8 +95,8 @@ app.get("/locate", async function (req, res) {
     var latitude = JSON.stringify(devices.content[2].location.latitude);
     res.render("location", {
       title: "Location",
-      longitude: longitude,
-      latitude: latitude
+      longitude: longitude || "-98.628067",
+      latitude: latitude || "29.645479"
       //longitude: "-98.628067",
       //latitude: "29.645479"
     });
