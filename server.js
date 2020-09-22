@@ -13,7 +13,9 @@ app.use(express.static("public"));
 
 app.set("view engine", "pug");
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
 app.get("/", function (req, res) {
   res.render("index", {
@@ -125,14 +127,15 @@ app.get("/about", function (req, res) {
 
 app.post("/calendar", async function (req, res) {
   if (req.body.token && req.body.url) {
-    const todoist = Todoist(req.body.token);
-    todoist.catch((err) => {
-      console.log(err);
+    let todoist;
+    try {
+      todoist = Todoist(req.body.token);
+    } catch {
       res.send({
         error: "401",
         message: "Your Todoist API Token is invalid. Make sure it's correct by verifying it in User Settings."
       });
-    });
+    }
     let url;
     if (req.body.url.includes('webcal://')) {
       // If body contains "webcal://"
@@ -172,7 +175,9 @@ app.post("/calendar", async function (req, res) {
               content: ev.summary,
               due: {
                 // Change UTC -> CDT
-                string: ev.end.toLocaleDateString('en-US', { timeZone: 'America/Chicago' })
+                string: ev.end.toLocaleDateString('en-US', {
+                  timeZone: 'America/Chicago'
+                })
               }
             }).then((tdRes) => {
               // tdRes should be todoistResponse
