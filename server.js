@@ -144,7 +144,7 @@ app.post("/calendar", async function (req, res) {
       // If body is incorrectly formatted
       res.send({
         error: "400",
-        message: "Your iCal URL is incorrect. Make sure it starts with either https:// or webcal://."
+        message: "Your iCal URL is incorrect or unsecure. Make sure it starts with either https:// or webcal://. HTTP is NOT supported. Please use HTTPS."
       });
     }
     let body = "<h1>Updated with the following:</h1>";
