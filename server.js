@@ -131,6 +131,7 @@ app.post("/calendar", async function (req, res) {
     try {
       // Try using the API Token, if it works, proceed, otherwise, go to the catch block
       todoist = Todoist(req.body.token);
+      await todoist.sync();
       let url;
       if (req.body.url.includes('webcal://')) {
         // If body contains "webcal://"
