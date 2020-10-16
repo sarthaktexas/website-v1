@@ -24,7 +24,7 @@ app.get("/", function (req, res) {
 });
 
 app.get("/contact", function (req, res) {
-  res.redirect("https://sarthakmohanty.me/contact");
+  res.redirect("https://sarthakmohanty.me/contact.html");
 });
 
 app.get("/tasks", async function (req, res) {
